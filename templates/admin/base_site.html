@@ -1,0 +1,51 @@
+{% extends "admin/base.html" %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <style>
+        table.import-preview {
+            border-collapse: collapse !important;
+            width: 100% !important;
+        }
+        table.import-preview th {
+            background-color: #f5f5f5 !important;
+            color: #000 !important;
+            text-align: center !important;
+            padding: 6px 10px !important;
+        }
+        table.import-preview td {
+            background-color: #fff !important;
+            color: #000 !important;
+            text-align: center !important;
+            padding: 6px 10px !important;
+        }
+        table.import-preview td  ins{
+            background-color: #fff !important;
+            color: #000 !important;
+            text-align: center !important;
+            padding: 6px 10px !important;
+            text-decoration: none !important; /* 👈 underline yo‘qoladi */
+
+        }
+        table.import-preview tr:nth-child(even) td {
+            background-color: #fafafa !important;
+        }
+
+        /* Import holatlari uchun ranglar */
+        .import-preview .row_new td,
+        .import-preview .field_new {
+            background-color: #e6ffe6 !important; /* och yashil */
+            color: #000 !important;
+        }
+        .import-preview .row_update td,
+        .import-preview .field_update {
+            background-color: #fffbe6 !important; /* och sariq */
+            color: #000 !important;
+        }
+        .import-preview .row_delete td,
+        .import-preview .field_delete {
+            background-color: #ffe6e6 !important; /* och qizil */
+            color: #000 !important;
+        }
+    </style>
+{% endblock %}
