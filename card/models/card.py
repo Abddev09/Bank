@@ -2,7 +2,7 @@ from django.db import models
 from import_export import resources, results
 from import_export.results import RowResult
 
-from card.utils.utils import format_card_number, format_expire, format_phone_number, format_balance
+from utils import format_card_number, format_expire, format_phone_number, format_balance
 
 Status = (
     ('expired', 'expired'),

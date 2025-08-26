@@ -3,7 +3,7 @@ import uuid
 from datetime import datetime
 from rest_framework import serializers
 
-from card.utils import format_card_number
+from utils import format_card_number
 from transfer.models import Transfer, Error
 from card.models import Card
 
@@ -131,7 +131,16 @@ class TransferSerializer(serializers.ModelSerializer):
         validated_data['ext_id'] = f"tr-{uuid.uuid4()}"
         validated_data['receiver_phone'] = self.receiver_card_instance.phone
         validated_data['sender_phone'] = self.sender_card_instance.phone
-        validated_data['state'] = 'created'
+        validated_data['state'] = 1
         # OTP generatsiya qilamiz (masalan, 6 xonali random)
         validated_data['otp'] = str(uuid.uuid4().int)[:6]
         return super().create(validated_data)
+
+
+
+
+class ErrorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Error
+        fields = '__all__'
+

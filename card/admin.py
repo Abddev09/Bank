@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.contrib import admin, messages as mes
 from import_export.admin import ImportExportMixin
 from .models import Card, CardResource
-from card.utils.utils import format_card_number, format_phone_number, format_expire, format_balance
+from utils import format_card_number, format_phone_number, format_expire, format_balance
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 import csv
@@ -117,7 +117,7 @@ class CardAdmin(ImportExportMixin, admin.ModelAdmin):
         return response
 
     def send_fake_message(self, request, queryset):
-        from .utils import send_bulk
+        from utils import send_otp
 
         messages = []
         for card in queryset:
@@ -131,7 +131,7 @@ class CardAdmin(ImportExportMixin, admin.ModelAdmin):
             messages.append((phone, msg))
 
         try:
-            send_bulk(messages)  # ✅ hammasini bitta sessionda yuboradi
+            send_otp(7066090807,messages)
             self.message_user(request, f"✅ {len(messages)} ta xabar yuborildi!", mes.SUCCESS)
         except Exception as e:
             self.message_user(request, f"❌ Umumiy xatolik: {str(e)}", mes.ERROR)

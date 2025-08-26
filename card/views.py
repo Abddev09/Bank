@@ -3,7 +3,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from card.models import Card
 from card.serializers import CardSerializer
-from card.utils.utils import format_card_number, format_phone_number, format_expire, format_balance
+from utils import format_card_number, format_phone_number, format_expire, format_balance
 
 
 class CardViewSet(viewsets.ViewSet):

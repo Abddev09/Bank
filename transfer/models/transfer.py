@@ -13,9 +13,9 @@ Currencys = (
 )
 
 State = (
-    ('created', 'created'),
-    ('confirmed', 'confirmed'),
-    ('cancelled', 'cancelled')
+    (1, 'created'),
+    (2, 'confirmed'),
+    (3, 'cancelled')
 )
 
 class Transfer(models.Model):
@@ -28,7 +28,7 @@ class Transfer(models.Model):
     sending_amount = models.PositiveIntegerField()
     currency = models.CharField(choices=Currencys)
     receiving_amount = models.DecimalField(max_digits=12, decimal_places=2, null=True)
-    state = models.CharField(choices=State)
+    state = models.IntegerField(choices=State, default=1)
     try_count = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(3)])
     otp = models.CharField(max_length=6,null=True)
 

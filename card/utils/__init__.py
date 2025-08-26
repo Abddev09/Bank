@@ -1,2 +1,0 @@
-from .fake_message import send_bulk
-from.utils import phone_mask,card_mask,format_card_number,format_balance,format_expire,format_phone_number

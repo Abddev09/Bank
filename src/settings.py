@@ -12,7 +12,8 @@ SECRET_KEY = 'django-insecure-cbl85@f*-&#%o0(%6sf)%n5zxlzdt%j+7ea8ezc6t!ly)ju!6i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+]
 
 
 JAZZMIN_SETTINGS = {
@@ -23,7 +24,7 @@ JAZZMIN_SETTINGS = {
     "site_header": "Library",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "None",
+    "site_brand": "Adminstration",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": None,
@@ -165,6 +166,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     "import_export",
     'card',
     'transfer',
