@@ -1,1 +1,1 @@
-from .error_handler import error_response
+from .error_handler import get_error_response

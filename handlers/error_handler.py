@@ -1,12 +1,22 @@
-from rest_framework import status
-from rest_framework.response import Response
-
 from transfer.models import Error
-from transfer.serializer import ErrorSerializer
 
-def error_response(code: int, http_status=status.HTTP_400_BAD_REQUEST):
+
+def get_error_response(error_code):
+    """Error model dan error ma'lumotlarini olish"""
     try:
-        error = Error.objects.get(code=code)
-        return Response({"error": ErrorSerializer(error).data}, status=http_status)
-    except Error.DoesNotExist:
-        return Response({"error": {"code": code, "message": "Unknown error"}}, status=http_status)
+        error = Error.objects.get(code=error_code)
+        return {
+            "code": error.code,
+            "message": error.en,  # yoki message_uz, message_ru
+            "message_uz": error.uz,
+            "message_ru": error.ru,
+            "message_en": error.en,
+        }
+    except:
+        return {
+            "code": 32706,
+            "message": "Unknown error occurred",
+            "message_uz": "Noma'lum xatolik yuz berdi",
+            "message_ru": "Произошла неизвестная ошибка",
+            "message_en": "Unknown error occurred",
+        }

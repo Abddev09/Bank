@@ -156,8 +156,6 @@ JAZZMIN_SETTINGS = {
     # Add a language dropdown into the admin
 }
 
-# Application definition
-
 INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',

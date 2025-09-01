@@ -1,7 +1,7 @@
-from rest_framework.routers import DefaultRouter
-from .views import TransfersAPIViewsSet
+# transfer/urls.py
+from django.urls import path
+from .views import JSONRPCView
 
-router = DefaultRouter()
-router.register(r'transfers', TransfersAPIViewsSet, basename='transfers')
-
-urlpatterns = router.urls
+urlpatterns = [
+    path("transfer/", JSONRPCView.as_view(), name="jsonrpc_transfer"),
+]

@@ -37,6 +37,8 @@ class Transfer(models.Model):
     confirmed_at = models.DateTimeField(null=True,blank=True)
     cancelled_at = models.DateTimeField(null=True,blank=True)
 
+    def __str__(self):
+        return self.sender_card_number
 
 class Error(models.Model):
     code = models.IntegerField(unique=True)
