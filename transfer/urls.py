@@ -1,7 +1,7 @@
 # transfer/urls.py
 from django.urls import path
-from .views import JSONRPCView
+from .views import jsonrpc
 
 urlpatterns = [
-    path("transfer/", JSONRPCView.as_view(), name="jsonrpc_transfer"),
+    path("transfers/",jsonrpc, name="jsonrpc_transfer"),
 ]

@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 from import_export import resources, results
 from import_export.results import RowResult
@@ -11,6 +13,7 @@ Status = (
 )
 
 class Card(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)  # ✅
     card_number = models.CharField(max_length=32, unique=True)
     expire = models.CharField(max_length=20, null=True, blank=True)
     phone = models.CharField(max_length=20, null=True, blank=True)

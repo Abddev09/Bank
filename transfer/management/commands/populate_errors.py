@@ -3,7 +3,7 @@ from transfer.models import Error
 
 ERRORS = [
     (32700, "Ext id must be unique", "Ext id должен быть уникальным", "Ext id noyob bo'lishi kerak"),
-    (32701, "Ext id already exists", "Ext id уже существует", "Ext id allaqachon mavjud"),
+    (32701, "Ext id already exists", "Ext id уже существует", "Ext id allaqachon mavjud"),  # sender/receiver topilmadi joyida ishlatilgan
     (32702, "Balance is not enough", "Недостаточно средств", "Hisobda mablag‘ yetarli emas"),
     (32703, "SMS service is not bind", "SMS сервис не подключен", "SMS xizmati ulanmagan"),
     (32704, "Card expiry is not valid", "Срок действия карты недействителен", "Karta amal qilish muddati noto‘g‘ri"),
@@ -17,7 +17,11 @@ ERRORS = [
     (32712, "OTP is wrong, left try count is 2", "Неверный OTP, осталось 2 попытки", "Noto‘g‘ri OTP, yana 2 urinish qoldi"),
     (32713, "Method is not allowed", "Метод не разрешён", "Usulga ruxsat berilmagan"),
     (32714, "Method not found", "Метод не найден", "Usul topilmadi"),
+    (32716, "Transfer not found", "Перевод не найден", "O‘tkazma topilmadi"),
+    (32718, "OTP is wrong, left try count is 1", "Неверный OTP, осталась 1 попытка", "Noto‘g‘ri OTP, yana 1 urinish qoldi"),
+    (32719, "Transfer already cancelled", "Перевод уже отменён", "O‘tkazma allaqachon bekor qilingan"),
 ]
+
 
 class Command(BaseCommand):
     help = 'Populate Error model with predefined error messages'

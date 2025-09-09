@@ -2,12 +2,11 @@ from transfer.models import Error
 
 
 def get_error_response(error_code):
-    """Error model dan error ma'lumotlarini olish"""
     try:
         error = Error.objects.get(code=error_code)
         return {
             "code": error.code,
-            "message": error.en,  # yoki message_uz, message_ru
+            "message": error.en,
             "message_uz": error.uz,
             "message_ru": error.ru,
             "message_en": error.en,
