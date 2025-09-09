@@ -1,0 +1,43 @@
+services:
+  web:
+    build: .
+    container_name: django_app
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    environment:
+      - REDIS_HOST=redis
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    container_name: redis_broker
+    ports:
+      - "6379:6379"
+
+  celery:
+    build: .
+    container_name: celery_worker
+    command: celery -A src worker -l info
+    volumes:
+      - .:/app
+    environment:
+      - REDIS_HOST=redis   # docker ichida redis service nomi
+    depends_on:
+      - redis
+      - web
+
+  celery_beat:
+    build: .
+    container_name: celery_beat
+    command: celery -A src beat -l info
+    volumes:
+      - .:/app
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+      - web

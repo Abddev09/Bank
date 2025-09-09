@@ -255,3 +255,15 @@ MEDIA_ROOT = 'media/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+import os
+
+TG_TOKEN = "7589714957:AAGC0TUiYwHqiSXuNVT5Xr7CVZGb4w1ZZRg"
+
+# Docker yoki Local rejimga qarab Redis manzilini tanlash
+REDIS_HOST = os.environ.get("REDIS_HOST", "127.0.0.1")
+
+CELERY_BROKER_URL = f"redis://{REDIS_HOST}:6379/0"
+CELERY_RESULT_BACKEND = f"redis://{REDIS_HOST}:6379/0"
+

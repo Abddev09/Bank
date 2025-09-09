@@ -1,0 +1,34 @@
+2025-09-07 14:24:46,122 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234567891234567', 'receiver_card_number': '9876543219876543', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 840}
+2025-09-07 14:24:46,918 - INFO - [END] transfer_create | Time=0.7965s | Response=Right {'ext_id': 'tr-4ecaef34-54b1-4a7f-a923-85df530d92b0', 'state': 'created', 'otp_sent': True}
+2025-09-07 14:25:04,426 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-4ecaef34-54b1-4a7f-a923-85df530d92b0', 'otp': '443862'}
+2025-09-07 14:25:04,468 - INFO - [END] transfer_confirm | Time=0.0422s | Response=Right {'ext_id': 'tr-4ecaef34-54b1-4a7f-a923-85df530d92b0', 'state': 'confirmed'}
+2025-09-07 14:27:25,493 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234567891234567', 'receiver_card_number': '9876543219876543', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 840}
+2025-09-07 14:27:25,520 - ERROR - [ERROR] transfer_create | Time=0.0186s | Exception=not all arguments converted during string formatting | Traceback=Traceback (most recent call last):
+  File "/app/utils/logging_decorator.py", line 33, in wrapper
+    f"[END] {func.__name__} | Time={process_time}s | Response={response}"
+  File "/usr/local/lib/python3.10/site-packages/oslash/either.py", line 132, in __str__
+    return "Left: %s" % self._error
+TypeError: not all arguments converted during string formatting
+
+2025-09-07 14:27:52,694 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234567891234567', 'receiver_card_number': '9876543219876543', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 860}
+2025-09-07 14:27:52,712 - ERROR - [ERROR] transfer_create | Time=0.0163s | Exception=not all arguments converted during string formatting | Traceback=Traceback (most recent call last):
+  File "/app/utils/logging_decorator.py", line 33, in wrapper
+    f"[END] {func.__name__} | Time={process_time}s | Response={response}"
+  File "/usr/local/lib/python3.10/site-packages/oslash/either.py", line 132, in __str__
+    return "Left: %s" % self._error
+TypeError: not all arguments converted during string formatting
+
+2025-09-07 14:31:53,985 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234567891234567', 'receiver_card_number': '9876543219876543', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 860}
+2025-09-07 14:31:54,005 - INFO - [END] transfer_create | Time=0.02s | Response=<oslash.either.Left object at 0x76f20604b220>
+2025-09-07 14:32:44,477 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234567891234567', 'receiver_card_number': '9876543219876543', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 860}
+2025-09-07 14:32:45,229 - INFO - [END] transfer_create | Time=0.7524s | Response=<oslash.either.Right object at 0x76f205ed0a60>
+2025-09-07 14:33:35,615 - INFO - [START] transfer_cancel | IP=unknown | args=() kwargs={'ext_id': 'tr-f443a479-ba4e-4578-8293-d478641380bd'}
+2025-09-07 14:33:35,642 - INFO - [END] transfer_cancel | Time=0.0266s | Response=<oslash.either.Right object at 0x76f204cdacb0>
+2025-09-07 14:56:08,280 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234567891234567', 'receiver_card_number': '9876543219876543', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 741}
+2025-09-07 14:56:08,319 - INFO - [END] transfer_create | Time=0.0388s | Response=<oslash.either.Left object at 0x733c0f34b790>
+2025-09-07 14:56:25,265 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234567891234567', 'receiver_card_number': '9876543219876543', 'sender_card_expiry': '05/29', 'sending_amount': 200, 'currency': 643}
+2025-09-07 14:56:26,744 - INFO - [END] transfer_create | Time=1.4792s | Response=<oslash.either.Right object at 0x733c0f2f4310>
+2025-09-07 14:56:45,372 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-718ffe1a-745f-436e-8a20-592c06954a1f', 'otp': '902163'}
+2025-09-07 14:56:45,439 - INFO - [END] transfer_confirm | Time=0.067s | Response=<oslash.either.Right object at 0x733c0f1760b0>
+2025-09-07 14:58:18,827 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234567891234567', 'receiver_card_number': '9876543219876543', 'sender_card_expiry': '05/29', 'sending_amount': 20, 'currency': 643}
+2025-09-07 14:58:20,411 - INFO - [END] transfer_create | Time=1.5842s | Response=<oslash.either.Right object at 0x733c0f34beb0>

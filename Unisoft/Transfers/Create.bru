@@ -1,0 +1,51 @@
+meta {
+  name: Create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api}}/transfers/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "jsonrpc":"2.0",
+      "method": "transfer.create",
+      "params": {
+          "sender_card_number":"1234567891234567",
+          "receiver_card_number":"9876543219876543",
+          "sender_card_expiry":"05/29",
+          "sending_amount":2,
+          "currency":840
+      },
+      "id": 1
+  }
+}
+
+tests {
+  test("Save ext_id if transfer.create", function() {
+    const data = res.getBody();  // response body JSON sifatida avtomatik parse qilinadi
+    const reqBody = req.getBody(); // request body, string bo‘lishi mumkin
+  
+    let reqJson;
+    try {
+      reqJson = typeof reqBody === 'string' ? JSON.parse(reqBody) : reqBody;
+    } catch (e) {
+      console.error("Request body parsing failed:", e);
+      return;
+    }
+  
+    if (reqJson.method === "transfer.create" && data.result?.ext_id) {
+      bru.setEnvVar("ext_id", data.result.ext_id);
+      console.log("Saved ext_id:", data.result.ext_id);
+    }
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}
