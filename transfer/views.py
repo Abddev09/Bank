@@ -228,7 +228,7 @@ def transfer_cancel(ext_id: str):
     transfer.cancelled_at = timezone.now()
     transfer.save()
 
-    return Success({"state": transfer.get_state_display()})
+    return Success({"state": transfer.state})
 
 
 @method(name="transfer.state")
@@ -241,7 +241,7 @@ def transfer_state(ext_id: str):
 
     return Success({
         "ext_id": transfer.ext_id,
-        "state": transfer.get_state_display(),
+        "state": transfer.state
     })
 
 

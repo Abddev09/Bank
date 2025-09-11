@@ -1,7 +1,7 @@
-from rest_framework.routers import DefaultRouter
-from .views import CardViewSet
+# transfer/urls.py
+from django.urls import path
+from .views import jsonrpc
 
-router = DefaultRouter()
-router.register(r'cards', CardViewSet, basename='cards')
-
-urlpatterns = router.urls
+urlpatterns = [
+    path("cards/",jsonrpc, name="jsonrpc_cards"),
+]

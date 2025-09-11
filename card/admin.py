@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.contrib import admin, messages as mes
 from import_export.admin import ImportExportMixin
 from .models import Card, CardResource
-from utils import format_card_number, format_phone_number, format_expire, format_balance
+from utils import format_card_number, format_phone_number, format_expire, format_balance, card_mask
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 import csv
@@ -26,7 +26,7 @@ class CardAdmin(ImportExportMixin, admin.ModelAdmin):
 
     @admin.display(description="Card number")
     def display_card_number(self, obj):
-        return format_card_number(obj.card_number)
+        return card_mask(format_card_number(obj.card_number))
 
     @admin.display(description="Expire")
     def display_expire(self, obj):
@@ -38,7 +38,7 @@ class CardAdmin(ImportExportMixin, admin.ModelAdmin):
 
     @admin.display(description="Balance")
     def display_balance(self, obj):
-        return format_balance(obj.balance)
+        return f"{format_balance(round(obj.balance, 2))} sum"
 
     # === Actions ===
     actions = ["export_selected_xlsx", "export_selected_csv", "export_filtered_csv","send_fake_message"]
