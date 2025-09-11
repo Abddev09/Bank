@@ -16,9 +16,11 @@ from handlers import get_error_response
 from transfer.models import Transfer
 from card.models import Card
 from utils import send_otp, format_card_number
+from utils.logging_decorator import log_request_response
 
 
 @method(name="transfer.create")
+@log_request_response
 def transfer_create(**params):
     try:
         print("transfer_create called. params keys:", list(params.keys()))
@@ -151,8 +153,11 @@ def transfer_create(**params):
         error_info = get_error_response(32706)
         return Error(code=error_info["code"], message=str(e), data=error_info)
 
+
 @method(name="transfer.confirm")
+@log_request_response
 def transfer_confirm(ext_id: str, otp: str):
+
     try:
         transfer = Transfer.objects.get(ext_id=ext_id)
         sender_card = Card.objects.filter(card_number=transfer.sender_card_number).first()
@@ -213,6 +218,7 @@ def transfer_confirm(ext_id: str, otp: str):
 
 
 @method(name="transfer.cancel")
+@log_request_response
 def transfer_cancel(ext_id: str):
     try:
         transfer = Transfer.objects.get(ext_id=ext_id)
