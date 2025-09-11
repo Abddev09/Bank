@@ -1,16 +1,20 @@
-
+import os
 
 from pathlib import Path
 
+import dj_database_url
+from dotenv import load_dotenv
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+load_dotenv(BASE_DIR / ".env")
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-cbl85@f*-&#%o0(%6sf)%n5zxlzdt%j+7ea8ezc6t!ly)ju!6i'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG")
+
 
 ALLOWED_HOSTS = [
 ]
@@ -203,12 +207,17 @@ WSGI_APPLICATION = 'src.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG:
+    DATABASES = {
+        'default': dj_database_url.parse(os.getenv("DATABASE_URL"))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation
@@ -257,9 +266,8 @@ MEDIA_ROOT = 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-import os
 
-TG_TOKEN = "7589714957:AAGC0TUiYwHqiSXuNVT5Xr7CVZGb4w1ZZRg"
+TG_TOKEN = os.getenv("TG_TOKEN")
 
 # Docker yoki Local rejimga qarab Redis manzilini tanlash
 REDIS_HOST = os.environ.get("REDIS_HOST", "127.0.0.1")
