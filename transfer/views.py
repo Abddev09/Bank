@@ -5,7 +5,6 @@ import traceback
 import uuid
 from datetime import datetime
 from django.db import transaction
-from decimal import Decimal
 
 from django.http import JsonResponse
 from django.utils import timezone
@@ -19,9 +18,41 @@ from utils import send_otp, format_card_number
 from utils.logging_decorator import log_request_response
 
 
+
+
+
+"""  Transfer create  """
 @method(name="transfer.create")
 @log_request_response
 def transfer_create(**params):
+    """
+        Create a new transfer between two cards.
+
+        Args:
+            **params: Dictionary containing transfer details:
+                - sender_card_number (str): Sender card number (PAN).
+                - receiver_card_number (str): Receiver card number (PAN).
+                - sender_card_expiry (str): Expiry date in format "MM/YY".
+                - sending_amount (Decimal|float|int): Amount to transfer.
+                - currency (str): Currency code ("643", "840", "860").
+
+        Returns:
+            Success: JSON-RPC Success object with ext_id, state, otp_sent.
+            Error: JSON-RPC Error object with error details.
+
+        Raises:
+            Error: If validation fails (missing field, invalid card, not enough balance, etc.).
+
+        Example:
+            >>> transfer_create(
+            ...     sender_card_number="8600123412341234",
+            ...     receiver_card_number="9860123412341234",
+            ...     sender_card_expiry="12/26",
+            ...     sending_amount=100,
+            ...     currency="860"
+            ... )
+            <Success {'ext_id': 'tr-xxxx', 'state': 'created', 'otp_sent': True}>
+        """
     try:
         print("transfer_create called. params keys:", list(params.keys()))
 
@@ -154,10 +185,29 @@ def transfer_create(**params):
         return Error(code=error_info["code"], message=str(e), data=error_info)
 
 
+
+"""  Transfer confirm  """
 @method(name="transfer.confirm")
 @log_request_response
 def transfer_confirm(ext_id: str, otp: str):
+    """
+        Confirm a transfer using OTP.
 
+        Args:
+            ext_id (str): External transfer ID (unique identifier).
+            otp (str): One-time password sent to sender.
+
+        Returns:
+            Success: JSON-RPC Success object with transfer state.
+            Error: JSON-RPC Error object if OTP is invalid, expired, or max tries exceeded.
+
+        Raises:
+            Error: If transfer does not exist or already cancelled.
+
+        Example:
+            >>> transfer_confirm(ext_id="tr-1234", otp="123456")
+            <Success {'ext_id': 'tr-1234', 'state': 'confirmed'}>
+        """
     try:
         transfer = Transfer.objects.get(ext_id=ext_id)
         sender_card = Card.objects.filter(card_number=transfer.sender_card_number).first()
@@ -217,9 +267,25 @@ def transfer_confirm(ext_id: str, otp: str):
     })
 
 
+
+"""  Transfer cancel  """
 @method(name="transfer.cancel")
 @log_request_response
 def transfer_cancel(ext_id: str):
+    """
+        Cancel an existing transfer.
+
+        Args:
+            ext_id (str): External transfer ID.
+
+        Returns:
+            Success: JSON-RPC Success object with cancelled state.
+            Error: JSON-RPC Error if transfer does not exist or already cancelled.
+
+        Example:
+            >>> transfer_cancel(ext_id="tr-1234")
+            <Success {'state': 'cancelled'}>
+        """
     try:
         transfer = Transfer.objects.get(ext_id=ext_id)
     except Transfer.DoesNotExist:
@@ -237,8 +303,24 @@ def transfer_cancel(ext_id: str):
     return Success({"state": transfer.state})
 
 
+
+"""  Transfer state  """
 @method(name="transfer.state")
 def transfer_state(ext_id: str):
+    """
+        Retrieve the current state of a transfer.
+
+        Args:
+            ext_id (str): External transfer ID.
+
+        Returns:
+            Success: JSON-RPC Success object with ext_id and state.
+            Error: JSON-RPC Error if transfer not found.
+
+        Example:
+            >>> transfer_state(ext_id="tr-1234")
+            <Success {'ext_id': 'tr-1234', 'state': 2}>
+        """
     try:
         transfer = Transfer.objects.get(ext_id=ext_id)
     except Transfer.DoesNotExist:
@@ -251,8 +333,35 @@ def transfer_state(ext_id: str):
     })
 
 
+
+"""  Transfer history  """
 @method(name="transfer.history")
 def transfer_history(card_number: str, start_date: str, end_date: str, status: str = None):
+    """
+        Get transfer history for a given card.
+
+        Args:
+            card_number (str): Card number (PAN).
+            start_date (str): Start date in ISO format.
+            end_date (str): End date in ISO format.
+            status (str, optional): Transfer status filter ("created", "confirmed", "cancelled").
+
+        Returns:
+            Success: JSON-RPC Success object with list of transfers.
+            Error: JSON-RPC Error if query fails.
+
+        Example:
+            >>> transfer_history(
+            ...     card_number="8600123412341234",
+            ...     start_date="2025-01-01",
+            ...     end_date="2025-02-01",
+            ...     status="confirmed"
+            ... )
+            <Success [
+                {'ext_id': 'tr-1', 'sending_amount': 100, 'state': 'confirmed', 'created_at': '2025-01-05T12:00:00'},
+                {'ext_id': 'tr-2', 'sending_amount': 200, 'state': 'confirmed', 'created_at': '2025-01-15T15:30:00'}
+            ]>
+        """
     try:
         card_number = format_card_number(card_number)
         transfers = Transfer.objects.filter(sender_card_number=card_number)
@@ -283,6 +392,8 @@ def transfer_history(card_number: str, start_date: str, end_date: str, status: s
         return Error(code=error_info["code"], message=error_info["message"], data=error_info)
 
 
+
+"""  Transfer JSONRPC Dispatcher  """
 @csrf_exempt
 def jsonrpc(request):
     if request.method == 'POST':

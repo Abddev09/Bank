@@ -61,7 +61,6 @@ def format_expire(expire: str) -> str:
     return f"{mm}/{yy}"
 
 
-
 def format_balance(balance) -> float:
     if not balance or str(balance).lower() in ["nan", "none", "empty"]:
         return 0.0
@@ -70,6 +69,7 @@ def format_balance(balance) -> float:
 
 def card_mask(card_number: str) -> str:
     return f"{card_number[:4]} {card_number[4:7]}** **** {card_number[-4:]}"
+
 
 def phone_mask(phone: str) -> str:
     return phone[:7] + "****"

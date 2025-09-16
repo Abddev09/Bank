@@ -83,6 +83,7 @@ class TransferRpcTests(TestCase):
 
     def test_transfer_cancel(self):
         """Transfer cancel"""
+
         transfer = Transfer.objects.create(
             ext_id="tr-456",
             sender_card_number=self.sender.card_number,

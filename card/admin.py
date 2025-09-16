@@ -138,3 +138,4 @@ class CardAdmin(ImportExportMixin, admin.ModelAdmin):
 
     send_fake_message.short_description = "Send fake message to selected cards"
 
+
