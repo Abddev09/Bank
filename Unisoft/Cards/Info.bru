@@ -1,0 +1,28 @@
+meta {
+  name: Info
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{api}}/cards/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0",
+    "method": "card.info",
+    "params": {
+      "card_number": "9860080121420436",
+      "expire": "09/29"
+    },
+    "id": 3
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}

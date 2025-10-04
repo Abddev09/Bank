@@ -5,9 +5,25 @@ meta {
 }
 
 post {
-  url: {{api}}/cards
-  body: none
+  url: {{api}}/cards/
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0",
+    "method": "card.add",
+    "params": {
+      "card_number": "5614681212949303",
+      "expire": "12/26",
+      "phone": "998901234567",
+      "status": "active",
+      "balance": 100000
+    },
+    "id": 2
+  }
+  
 }
 
 settings {

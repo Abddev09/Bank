@@ -1,7 +1,5 @@
-from django.core.validators import MinValueValidator, MaxValueValidator
+# transfer/models.py
 from django.db import models
-
-
 
 Currencys = (
     ('643','RUB'),
@@ -17,25 +15,25 @@ State = (
 
 class Transfer(models.Model):
     ext_id = models.CharField(max_length=40, default='', unique=True, editable=False)
-    sender_card_number = models.CharField(max_length=20)
-    receiver_card_number = models.CharField(max_length=20)
-    sender_card_expiry = models.CharField(max_length=5)
-    sender_phone = models.CharField(max_length=20)
-    receiver_phone = models.CharField(max_length=20)
-    sending_amount = models.PositiveIntegerField()
-    currency = models.CharField(choices=Currencys,max_length=3)
+    sender_id = models.TextField()
+    receiver_id = models.TextField()
+    sending_amount = models.DecimalField(max_digits=12, decimal_places=2, null=True)
+    currency = models.CharField(choices=Currencys, max_length=3)
     receiving_amount = models.DecimalField(max_digits=12, decimal_places=2, null=True)
     state = models.IntegerField(choices=State, default=1)
-    try_count = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(3)])
-    otp = models.CharField(max_length=256,null=True)
-
+    exchange_rate = models.FloatField(null=True, blank=True)
+    rate_updated_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    confirmed_at = models.DateTimeField(null=True,blank=True)
-    cancelled_at = models.DateTimeField(null=True,blank=True)
+    confirmed_at = models.DateTimeField(null=True, blank=True)
+    cancelled_at = models.DateTimeField(null=True, blank=True)
+
+    def get_state_display(self):
+        return dict(State).get(self.state, 'unknown')
 
     def __str__(self):
-        return self.sender_card_number
+        return f"{self.ext_id} - {self.sender_id} -> {self.receiver_id}"
+
 
 class Error(models.Model):
     code = models.IntegerField(unique=True)

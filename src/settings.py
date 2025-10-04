@@ -2,7 +2,6 @@ import os
 
 from pathlib import Path
 
-import dj_database_url
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -13,7 +12,9 @@ load_dotenv(BASE_DIR / ".env")
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+
+DEBUG = int(os.getenv("DEBUG", 1))
+
 
 
 ALLOWED_HOSTS = [
@@ -172,6 +173,7 @@ INSTALLED_APPS = [
     "import_export",
     'card',
     'transfer',
+    'django_ratelimit',
 ]
 
 MIDDLEWARE = [
@@ -207,9 +209,18 @@ WSGI_APPLICATION = 'src.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-if DEBUG:
+
+
+if not DEBUG:
     DATABASES = {
-        'default': dj_database_url.parse(os.getenv("DATABASE_URL"))
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': "unisoft",
+            "USER":"postgres",
+            "PASSWORD":"2009",
+            "PORT":5432,
+            "HOST":"localhost"
+        }
     }
 else:
     DATABASES = {
@@ -218,6 +229,7 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
 
 
 # Password validation
@@ -275,3 +287,9 @@ REDIS_HOST = os.environ.get("REDIS_HOST", "127.0.0.1")
 CELERY_BROKER_URL = f"redis://{REDIS_HOST}:6379/0"
 CELERY_RESULT_BACKEND = f"redis://{REDIS_HOST}:6379/0"
 
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": os.getenv("REDIS_URL", "redis://127.0.0.1:6379/1"),
+    }
+}

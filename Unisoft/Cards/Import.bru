@@ -1,0 +1,23 @@
+meta {
+  name: Import
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{api}}/cards/import/
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  file: @file(/home/abdulloh/Downloads/selected_cards.xlsx)
+}
+
+body:file {
+  file: @file(/home/abdulloh/Downloads/selected_cards(1).csv) @contentType(text/csv; charset=utf-8)
+}
+
+settings {
+  encodeUrl: true
+}

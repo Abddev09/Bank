@@ -1,0 +1,538 @@
+2025-09-16 17:29:31,801 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234 123** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 862}
+2025-09-16 17:29:31,920 - INFO - [END] transfer_create | Time=0.1193s | Response=<oslash.either.Left object at 0x00000178A8BBDD30>
+2025-09-16 17:29:45,484 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234 123** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 843}
+2025-09-16 17:29:45,622 - INFO - [END] transfer_create | Time=0.1381s | Response=<oslash.either.Left object at 0x00000178A8C17B10>
+2025-09-16 17:29:53,275 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234 123** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 843}
+2025-09-16 17:29:53,414 - INFO - [END] transfer_create | Time=0.1394s | Response=<oslash.either.Left object at 0x00000178A931B490>
+2025-09-16 17:30:02,650 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234 123** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 840}
+2025-09-16 17:30:06,451 - INFO - [END] transfer_create | Time=3.8018s | Response=<oslash.either.Right object at 0x00000178A895C950>
+2025-09-16 17:30:36,432 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:36,574 - INFO - [END] transfer_confirm | Time=0.1421s | Response=<oslash.either.Right object at 0x00000178A91C9150>
+2025-09-16 17:30:38,744 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:38,881 - INFO - [END] transfer_confirm | Time=0.1375s | Response=<oslash.either.Right object at 0x00000178A956FFC0>
+2025-09-16 17:30:39,775 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:39,888 - INFO - [END] transfer_confirm | Time=0.1131s | Response=<oslash.either.Right object at 0x00000178A957A490>
+2025-09-16 17:30:40,996 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:41,129 - INFO - [END] transfer_confirm | Time=0.1331s | Response=<oslash.either.Right object at 0x00000178A957A8F0>
+2025-09-16 17:30:42,144 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:42,303 - INFO - [END] transfer_confirm | Time=0.1586s | Response=<oslash.either.Right object at 0x00000178A957AE90>
+2025-09-16 17:30:43,117 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:43,237 - INFO - [END] transfer_confirm | Time=0.1208s | Response=<oslash.either.Right object at 0x00000178A9579450>
+2025-09-16 17:30:43,949 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:44,161 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:44,185 - INFO - [END] transfer_confirm | Time=0.2359s | Response=<oslash.either.Right object at 0x00000178A9579630>
+2025-09-16 17:30:44,280 - INFO - [END] transfer_confirm | Time=0.1185s | Response=<oslash.either.Right object at 0x00000178A957A260>
+2025-09-16 17:30:44,355 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:44,536 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:44,580 - INFO - [END] transfer_confirm | Time=0.2256s | Response=<oslash.either.Right object at 0x00000178A957AFD0>
+2025-09-16 17:30:44,741 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:44,765 - INFO - [END] transfer_confirm | Time=0.2283s | Response=<oslash.either.Right object at 0x00000178A9579A40>
+2025-09-16 17:30:44,856 - INFO - [END] transfer_confirm | Time=0.1154s | Response=<oslash.either.Right object at 0x00000178A9579040>
+2025-09-16 17:30:44,864 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:44,980 - INFO - [END] transfer_confirm | Time=0.1158s | Response=<oslash.either.Right object at 0x00000178A957BBB0>
+2025-09-16 17:30:45,003 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:45,126 - INFO - [END] transfer_confirm | Time=0.1231s | Response=<oslash.either.Right object at 0x00000178A9579860>
+2025-09-16 17:30:45,238 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:45,351 - INFO - [END] transfer_confirm | Time=0.1135s | Response=<oslash.either.Right object at 0x00000178A9578C30>
+2025-09-16 17:30:45,399 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:45,499 - INFO - [END] transfer_confirm | Time=0.0994s | Response=<oslash.either.Right object at 0x00000178A957BC00>
+2025-09-16 17:30:45,625 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****9'}
+2025-09-16 17:30:45,755 - INFO - [END] transfer_confirm | Time=0.1297s | Response=<oslash.either.Right object at 0x00000178A9579860>
+2025-09-16 17:30:54,961 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-3813c31e-47ee-4c8b-a966-b86af34f7f9c', 'otp': '*****8'}
+2025-09-16 17:30:55,068 - INFO - [END] transfer_confirm | Time=0.1074s | Response=<oslash.either.Right object at 0x00000178A957BC00>
+2025-09-16 17:31:18,286 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234 123** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 840}
+2025-09-16 17:31:18,427 - INFO - [END] transfer_create | Time=0.1419s | Response=<oslash.either.Left object at 0x00000178A9564E20>
+2025-09-16 17:32:12,475 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234 123** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 840}
+2025-09-16 17:32:14,274 - INFO - [END] transfer_create | Time=1.7983s | Response=<oslash.either.Right object at 0x00000178A957B250>
+2025-09-16 17:32:29,725 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-986bfe95-332e-4207-a89e-4eb03773ea2b', 'otp': '*****8'}
+2025-09-16 17:32:29,846 - INFO - [END] transfer_confirm | Time=0.1209s | Response=<oslash.either.Right object at 0x00000178A956FC00>
+2025-09-16 17:33:35,827 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-986bfe95-332e-4207-a89e-4eb03773ea2b', 'otp': '*****5'}
+2025-09-16 17:33:36,013 - INFO - [END] transfer_confirm | Time=0.1854s | Response=<oslash.either.Right object at 0x00000178A95A9D10>
+2025-09-16 17:36:13,565 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-986bfe95-332e-4207-a89e-4eb03773ea2b', 'otp': '*****5'}
+2025-09-16 17:36:13,728 - INFO - [END] transfer_confirm | Time=0.163s | Response=<oslash.either.Left object at 0x000002AF73AB5400>
+2025-09-16 17:36:58,878 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234 123** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 840}
+2025-09-16 17:37:00,653 - INFO - [END] transfer_create | Time=1.7748s | Response=<oslash.either.Right object at 0x000002AF73A73250>
+2025-09-16 17:37:13,613 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-fc81aa51-3104-4b54-b4c2-83b90c6fb2d1', 'otp': '*****1'}
+2025-09-16 17:37:13,759 - INFO - [END] transfer_confirm | Time=0.1459s | Response=<oslash.either.Left object at 0x000002AF741987D0>
+2025-09-16 17:37:19,977 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-fc81aa51-3104-4b54-b4c2-83b90c6fb2d1', 'otp': '*****0'}
+2025-09-16 17:37:20,113 - INFO - [END] transfer_confirm | Time=0.136s | Response=<oslash.either.Right object at 0x000002AF7408AD00>
+2025-09-16 17:37:23,350 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-fc81aa51-3104-4b54-b4c2-83b90c6fb2d1', 'otp': '*****0'}
+2025-09-16 17:37:23,494 - INFO - [END] transfer_confirm | Time=0.1442s | Response=<oslash.either.Left object at 0x000002AF7443C3E0>
+2025-09-16 17:38:56,186 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-fc81aa51-3104-4b54-b4c2-83b90c6fb2d1', 'otp': '*****0'}
+2025-09-16 17:38:56,313 - INFO - [END] transfer_confirm | Time=0.1274s | Response=<oslash.either.Left object at 0x000002AF741A0490>
+2025-09-16 17:39:21,056 - INFO - [START] transfer_cancel | IP=unknown | args=() kwargs={'ext_id': 'tr-fc81aa51-3104-4b54-b4c2-83b90c6fb2d1'}
+2025-09-16 17:39:21,183 - INFO - [END] transfer_cancel | Time=0.1262s | Response=<oslash.either.Right object at 0x000002AF744058B0>
+2025-09-16 17:40:18,872 - INFO - [START] transfer_cancel | IP=unknown | args=() kwargs={'ext_id': 'tr-fc81aa51-3104-4b54-b4c2-83b90c6fb2d1'}
+2025-09-16 17:40:19,112 - INFO - [END] transfer_cancel | Time=0.2398s | Response=<oslash.either.Left object at 0x00000280A30CD2B0>
+2025-09-16 22:20:49,323 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234 123** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 840}
+2025-09-16 22:20:49,472 - INFO - [END] transfer_create | Time=0.1515s | Response=<oslash.either.Left object at 0x00000280A3113110>
+2025-09-16 22:21:04,868 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234 123** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': -1000, 'currency': 840}
+2025-09-16 22:21:05,040 - INFO - [END] transfer_create | Time=0.1716s | Response=<oslash.either.Left object at 0x00000280A3664FC0>
+2025-09-16 22:23:22,725 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234 123** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 841}
+2025-09-16 22:23:22,795 - INFO - [END] transfer_create | Time=0.0699s | Response=<oslash.either.Left object at 0x00000280A37AB350>
+2025-09-16 22:23:35,963 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234 123** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-16 22:23:37,380 - INFO - [END] transfer_create | Time=1.4165s | Response=<oslash.either.Right object at 0x00000280A3C88910>
+2025-09-16 22:24:20,070 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-32e50661-df41-4f21-939f-c1cdaf6ad843', 'otp': '*****6'}
+2025-09-16 22:24:20,132 - INFO - [END] transfer_confirm | Time=0.0625s | Response=<oslash.either.Right object at 0x000002808A59BE30>
+2025-09-23 15:06:23,262 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234 567** **** 4567', 'receiver_card_number': '9876 543** **** 6543', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 840}
+2025-09-23 15:06:23,434 - INFO - [END] transfer_create | Time=0.1723s | Response=<oslash.either.Left object at 0x000001969AD62A50>
+2025-09-23 15:07:23,920 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234 567** **** 4567', 'receiver_card_number': '9876 543** **** 6543', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 840}
+2025-09-23 15:07:24,067 - INFO - [END] transfer_create | Time=0.1463s | Response=<oslash.either.Left object at 0x000001969AC5E350>
+2025-09-23 15:08:45,875 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234 567** **** 4567', 'receiver_card_number': '9876 543** **** 6543', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 523}
+2025-09-23 15:08:46,081 - INFO - [END] transfer_create | Time=0.2061s | Response=<oslash.either.Left object at 0x000001969AD6FBB0>
+2025-09-23 15:08:58,482 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234  56** **** 4567', 'receiver_card_number': '9876  54** **** 6543', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 523}
+2025-09-23 15:08:58,602 - INFO - [END] transfer_create | Time=0.1199s | Response=<oslash.either.Left object at 0x000001969AD4F130>
+2025-09-23 15:10:01,797 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 523}
+2025-09-23 15:10:01,915 - INFO - [END] transfer_create | Time=0.1185s | Response=<oslash.either.Left object at 0x000001969AD5B950>
+2025-09-23 15:10:15,407 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 2, 'currency': 523}
+2025-09-23 15:10:15,524 - INFO - [END] transfer_create | Time=0.1163s | Response=<oslash.either.Left object at 0x000001969AA4BF20>
+2025-09-23 15:10:42,786 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 840}
+2025-09-23 15:10:44,421 - INFO - [END] transfer_create | Time=1.6347s | Response=<oslash.either.Right object at 0x000001969AA3EDF0>
+2025-09-23 15:12:10,615 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-6a2d6962-327e-49ae-a0f6-3068d6f2107f', 'otp': '*****2'}
+2025-09-23 15:12:10,717 - INFO - [END] transfer_confirm | Time=0.1017s | Response=<oslash.either.Right object at 0x000001969ABB8190>
+2025-09-23 15:20:47,720 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 860}
+2025-09-23 15:20:49,296 - INFO - [END] transfer_create | Time=1.576s | Response=<oslash.either.Right object at 0x000001283DC63490>
+2025-09-23 15:21:01,130 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-1c7f73d3-d114-46f4-a8d5-2ecea075c8e8', 'otp': '*****9'}
+2025-09-23 15:21:01,245 - INFO - [END] transfer_confirm | Time=0.1146s | Response=<oslash.either.Right object at 0x000001283E025220>
+2025-09-23 15:21:26,086 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 840}
+2025-09-23 15:21:27,563 - INFO - [END] transfer_create | Time=1.477s | Response=<oslash.either.Right object at 0x000001283F1956D0>
+2025-09-23 15:26:10,405 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 840}
+2025-09-23 15:26:10,499 - INFO - [END] transfer_create | Time=0.0945s | Response=<oslash.either.Left object at 0x0000026ED01434D0>
+2025-09-23 15:26:31,041 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10000, 'currency': 840}
+2025-09-23 15:26:31,143 - INFO - [END] transfer_create | Time=0.1025s | Response=<oslash.either.Left object at 0x0000026ED07D3750>
+2025-09-23 15:26:36,378 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 10, 'currency': 840}
+2025-09-23 15:26:36,490 - INFO - [END] transfer_create | Time=0.1121s | Response=<oslash.either.Left object at 0x0000026ED07A3CE0>
+2025-09-23 15:26:42,319 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 0.1, 'currency': 840}
+2025-09-23 15:26:43,776 - INFO - [END] transfer_create | Time=1.4571s | Response=<oslash.either.Right object at 0x0000026ED06FF710>
+2025-09-23 15:26:56,669 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-bc8fe7ff-94cb-4514-87e1-fd34ca1f1253', 'otp': '*****5'}
+2025-09-23 15:26:56,873 - INFO - [END] transfer_confirm | Time=0.2034s | Response=<oslash.either.Right object at 0x0000026ED06D66D0>
+2025-09-23 15:28:15,009 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-bc8fe7ff-94cb-4514-87e1-fd34ca1f1253', 'otp': '*****5'}
+2025-09-23 15:28:15,113 - INFO - [END] transfer_confirm | Time=0.1045s | Response=<oslash.either.Left object at 0x0000026ED0787240>
+2025-09-23 15:28:38,242 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-23 15:28:39,615 - INFO - [END] transfer_create | Time=1.3729s | Response=<oslash.either.Right object at 0x0000026ED0AD8F00>
+2025-09-23 15:28:53,554 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-a518c95f-e9fd-41a7-9d9f-48aa5d86754e', 'otp': '*****8'}
+2025-09-23 15:28:53,747 - INFO - [END] transfer_confirm | Time=0.1936s | Response=<oslash.either.Right object at 0x0000026ED0AD8280>
+2025-09-23 15:33:41,871 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-23 15:33:43,462 - INFO - [END] transfer_create | Time=1.5917s | Response=<oslash.either.Right object at 0x00000267F3BA90F0>
+2025-09-23 15:33:52,971 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-0bb585e9-3985-4cab-a2c7-5a551871d7e7', 'otp': '*****2'}
+2025-09-23 15:33:53,073 - INFO - [END] transfer_confirm | Time=0.102s | Response=<oslash.either.Right object at 0x00000267F3413110>
+2025-09-23 15:38:46,664 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 856}
+2025-09-23 15:38:46,874 - INFO - [END] transfer_create | Time=0.2099s | Response=<oslash.either.Left object at 0x00000239794CD160>
+2025-09-23 15:43:13,324 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-23 15:43:14,978 - INFO - [END] transfer_create | Time=1.6539s | Response=<oslash.either.Right object at 0x000002533488F100>
+2025-09-23 15:43:30,403 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-bc85b693-e0aa-4e76-a409-13b83f801b1e', 'otp': '*****1'}
+2025-09-23 15:43:30,528 - INFO - [END] transfer_confirm | Time=0.1253s | Response=<oslash.either.Right object at 0x00000253349C74D0>
+2025-09-23 15:56:03,976 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-23 15:56:05,869 - INFO - [END] transfer_create | Time=1.8928s | Response=<oslash.either.Right object at 0x000001EFEEEB0180>
+2025-09-23 15:56:16,603 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-973fd630-98f3-47ed-8b09-3bd61671d64a', 'otp': '*****9'}
+2025-09-23 15:56:16,811 - INFO - [END] transfer_confirm | Time=0.2081s | Response=<oslash.either.Right object at 0x000001EFEE6FBF20>
+2025-09-23 15:58:20,523 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-23 15:58:21,979 - INFO - [END] transfer_create | Time=1.4556s | Response=<oslash.either.Right object at 0x00000299F8C8B6F0>
+2025-09-23 15:58:37,589 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-5800df91-8e79-48aa-8116-012704c1d8f6', 'otp': '*****2'}
+2025-09-23 15:58:37,710 - INFO - [END] transfer_confirm | Time=0.1212s | Response=<oslash.either.Right object at 0x00000299F8F595E0>
+2025-09-23 16:02:36,115 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-23 16:02:37,674 - INFO - [END] transfer_create | Time=1.5598s | Response=<oslash.either.Right object at 0x000001C71B7E55B0>
+2025-09-23 16:02:50,903 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-ac3fee9b-e1e5-421e-b28b-9a8cbb676311', 'otp': '*****9'}
+2025-09-23 16:02:51,004 - INFO - [END] transfer_confirm | Time=0.1013s | Response=<oslash.either.Right object at 0x000001C71B52FA70>
+2025-09-23 16:09:29,057 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '2284  37** **** 2342', 'receiver_card_number': '1234  12** **** 1234', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-23 16:09:31,554 - INFO - [END] transfer_create | Time=2.497s | Response=<oslash.either.Right object at 0x0000025BE415C770>
+2025-09-23 16:09:51,595 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-7c4d1671-19a1-4f07-aa08-8f9d8f2e1e47', 'otp': '*****1'}
+2025-09-23 16:09:51,705 - INFO - [END] transfer_confirm | Time=0.1105s | Response=<oslash.either.Right object at 0x0000025BE3E1F110>
+2025-09-27 15:55:37,550 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 15:55:37,555 - INFO - [END] transfer_create | Time=0.0048s | Response=<oslash.either.Left object at 0x0000022D9DFD46E0>
+2025-09-27 15:56:11,959 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 15:56:11,963 - INFO - [END] transfer_create | Time=0.0034s | Response=<oslash.either.Left object at 0x0000022D9DF8F4D0>
+2025-09-27 15:56:13,495 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 15:56:13,499 - INFO - [END] transfer_create | Time=0.0035s | Response=<oslash.either.Left object at 0x0000022D9DF8B360>
+2025-09-27 15:59:08,562 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 15:59:08,629 - INFO - [END] transfer_create | Time=0.0672s | Response=<oslash.either.Left object at 0x00000214ED54CEC0>
+2025-09-27 15:59:26,726 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender': '9860 0801 2142 0436', 'receiver': '5614 6812 1294 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 15:59:26,729 - INFO - [END] transfer_create | Time=0.0026s | Response=<oslash.either.Left object at 0x00000214ED825590>
+2025-09-27 15:59:35,372 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 15:59:35,379 - INFO - [END] transfer_create | Time=0.0064s | Response=<oslash.either.Left object at 0x00000214ED55A650>
+2025-09-27 16:02:41,336 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 16:02:41,410 - INFO - [END] transfer_create | Time=0.0741s | Response=<oslash.either.Left object at 0x0000020E2D86CC20>
+2025-09-27 16:18:11,376 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 16:18:11,393 - INFO - [END] transfer_create | Time=0.0175s | Response=<oslash.either.Left object at 0x000001EFC3730590>
+2025-09-27 16:21:59,938 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 16:21:59,954 - INFO - [END] transfer_create | Time=0.0162s | Response=<oslash.either.Left object at 0x0000024E6B934050>
+2025-09-27 16:22:59,480 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 16:22:59,493 - INFO - [END] transfer_create | Time=0.0127s | Response=<oslash.either.Left object at 0x0000023467148EC0>
+2025-09-27 16:33:40,145 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 16:33:41,043 - INFO - [END] transfer_create | Time=0.8983s | Response=<oslash.either.Right object at 0x78937ca48220>
+2025-09-27 16:33:56,318 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-16a41fc6-8b0e-4c9e-8f00-ee0cb1bca6ff', 'otp': '*****8'}
+2025-09-27 16:33:56,343 - INFO - [END] transfer_confirm | Time=0.0246s | Response=<oslash.either.Left object at 0x78937c9b0d90>
+2025-09-27 16:36:40,060 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-16a41fc6-8b0e-4c9e-8f00-ee0cb1bca6ff', 'otp': '*****8'}
+2025-09-27 16:36:40,078 - INFO - [END] transfer_confirm | Time=0.0187s | Response=<oslash.either.Left object at 0x729925d12aa0>
+2025-09-27 16:38:34,341 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-16a41fc6-8b0e-4c9e-8f00-ee0cb1bca6ff', 'otp': '*****9'}
+2025-09-27 16:38:34,367 - INFO - [END] transfer_confirm | Time=0.0259s | Response=<oslash.either.Left object at 0x76a0dfbe2e30>
+2025-09-27 16:38:35,288 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-16a41fc6-8b0e-4c9e-8f00-ee0cb1bca6ff', 'otp': '*****9'}
+2025-09-27 16:38:35,299 - INFO - [END] transfer_confirm | Time=0.0107s | Response=<oslash.either.Left object at 0x76a0dfa96410>
+2025-09-27 16:38:35,898 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-16a41fc6-8b0e-4c9e-8f00-ee0cb1bca6ff', 'otp': '*****9'}
+2025-09-27 16:38:35,910 - INFO - [END] transfer_confirm | Time=0.0116s | Response=<oslash.either.Left object at 0x76a0dfa96740>
+2025-09-27 16:38:36,438 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-16a41fc6-8b0e-4c9e-8f00-ee0cb1bca6ff', 'otp': '*****9'}
+2025-09-27 16:38:36,449 - INFO - [END] transfer_confirm | Time=0.0117s | Response=<oslash.either.Left object at 0x76a0dfb41300>
+2025-09-27 16:40:14,815 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 16:40:15,822 - INFO - [END] transfer_create | Time=1.0071s | Response=<oslash.either.Right object at 0x7d209cbc6230>
+2025-09-27 16:40:45,535 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-06f34658-cc16-415d-87e8-d6770466c152', 'otp': '*****1'}
+2025-09-27 16:40:45,570 - INFO - [END] transfer_confirm | Time=0.035s | Response=<oslash.either.Left object at 0x7d209c09c2b0>
+2025-09-27 16:47:28,712 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 16:47:29,520 - INFO - [END] transfer_create | Time=0.8073s | Response=<oslash.either.Right object at 0x783b02e88ee0>
+2025-09-27 16:47:47,050 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-206189dc-e914-456c-a925-6a4e21397a4f', 'otp': '*****1'}
+2025-09-27 16:47:47,067 - INFO - [END] transfer_confirm | Time=0.0165s | Response=<oslash.either.Left object at 0x783b0193ba60>
+2025-09-27 16:47:53,870 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-206189dc-e914-456c-a925-6a4e21397a4f', 'otp': '*****3'}
+2025-09-27 16:47:53,887 - INFO - [END] transfer_confirm | Time=0.0167s | Response=<oslash.either.Left object at 0x783b02cf7670>
+2025-09-27 16:48:01,099 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-206189dc-e914-456c-a925-6a4e21397a4f', 'otp': '*****2'}
+2025-09-27 16:48:01,123 - INFO - [END] transfer_confirm | Time=0.023s | Response=<oslash.either.Left object at 0x783b0193bbe0>
+2025-09-27 16:48:22,724 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-206189dc-e914-456c-a925-6a4e21397a4f', 'otp': '*****2'}
+2025-09-27 16:48:22,742 - INFO - [END] transfer_confirm | Time=0.0189s | Response=<oslash.either.Left object at 0x783b02c1e9b0>
+2025-09-27 16:49:15,395 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-206189dc-e914-456c-a925-6a4e21397a4f', 'otp': '*****2'}
+2025-09-27 16:49:15,415 - INFO - [END] transfer_confirm | Time=0.0193s | Response=<oslash.either.Left object at 0x783b01a59450>
+2025-09-27 17:15:08,654 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-206189dc-e914-456c-a925-6a4e21397a4f', 'otp': '*****2'}
+2025-09-27 17:15:08,828 - INFO - [END] transfer_confirm | Time=0.1744s | Response=<oslash.either.Left object at 0x759dea0b18a0>
+2025-09-27 17:15:17,667 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 17:15:19,390 - INFO - [END] transfer_create | Time=1.7229s | Response=<oslash.either.Right object at 0x759dea0fa440>
+2025-09-27 17:15:34,026 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-b64a5008-72b7-4a43-94f2-8b5db04b2015', 'otp': '*****9'}
+2025-09-27 17:15:34,076 - INFO - [END] transfer_confirm | Time=0.0508s | Response=<oslash.either.Left object at 0x759dea0b0790>
+2025-09-27 17:17:24,839 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-b64a5008-72b7-4a43-94f2-8b5db04b2015', 'otp': '*****9'}
+2025-09-27 17:17:24,971 - INFO - [END] transfer_confirm | Time=0.1316s | Response=<oslash.either.Right object at 0x7d1a26453490>
+2025-09-27 17:17:56,208 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-09-27 17:17:56,298 - INFO - [END] transfer_create | Time=0.0894s | Response=<oslash.either.Left object at 0x7d1a25be48b0>
+2025-09-27 17:18:25,271 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-27 17:18:32,221 - INFO - [END] transfer_create | Time=6.9501s | Response=<oslash.either.Right object at 0x7d1a2dc4ab60>
+2025-09-27 17:20:59,598 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-f422f3e4-e3dd-4db2-9129-aed0abfbafc9', 'otp': '*****6'}
+2025-09-27 17:20:59,669 - INFO - [END] transfer_confirm | Time=0.071s | Response=<oslash.either.Right object at 0x7d1a25160700>
+2025-09-27 17:21:50,865 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-27 17:21:52,629 - INFO - [END] transfer_create | Time=1.7638s | Response=<oslash.either.Right object at 0x7d1a251751e0>
+2025-09-27 17:22:01,981 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-27 17:22:03,215 - INFO - [END] transfer_create | Time=1.2337s | Response=<oslash.either.Right object at 0x7d1a25be5450>
+2025-09-27 17:22:05,099 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-27 17:22:05,705 - INFO - [END] transfer_create | Time=0.6058s | Response=<oslash.either.Right object at 0x7d1a251a65f0>
+2025-09-27 17:22:07,162 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-27 17:22:07,850 - INFO - [END] transfer_create | Time=0.6877s | Response=<oslash.either.Right object at 0x7d1a25201240>
+2025-09-27 17:22:09,060 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-27 17:22:11,071 - INFO - [END] transfer_create | Time=2.0107s | Response=<oslash.either.Right object at 0x7d1a2662bf40>
+2025-09-27 17:24:49,605 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-27 17:24:50,354 - INFO - [END] transfer_create | Time=0.7486s | Response=<oslash.either.Right object at 0x7d1a248588e0>
+2025-09-27 17:25:10,828 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-1a08ae77-3add-4a16-b759-9d0287216d4d', 'otp': '*****1'}
+2025-09-27 17:25:10,911 - INFO - [END] transfer_confirm | Time=0.0831s | Response=<oslash.either.Right object at 0x7d1a25b08d60>
+2025-09-27 17:34:11,060 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860  08** **** 0436', 'receiver_card_number': '5614  68** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-27 17:34:11,859 - INFO - [END] transfer_create | Time=0.7992s | Response=<oslash.either.Right object at 0x7d1a2514faf0>
+2025-09-27 17:34:32,821 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-6f9d7fe2-baee-4c5d-ad25-b590d559a12d', 'otp': '*****7'}
+2025-09-27 17:34:32,885 - INFO - [END] transfer_confirm | Time=0.0638s | Response=<oslash.either.Right object at 0x7d1a251a4f10>
+2025-09-28 15:23:12,505 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '1234 567** **** 4567', 'receiver_card_number': '9876 543** **** 6543', 'sender_card_expiry': '05/29', 'sending_amount': 2, 'currency': 840}
+2025-09-28 15:23:12,527 - INFO - [END] transfer_create | Time=0.0222s | Response=<oslash.either.Left object at 0x7de9e6428190>
+2025-09-28 15:24:07,888 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '05/29', 'sending_amount': 500, 'currency': 860}
+2025-09-28 15:24:07,906 - INFO - [END] transfer_create | Time=0.0185s | Response=<oslash.either.Left object at 0x7de9e62174f0>
+2025-09-28 15:24:15,218 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 500, 'currency': 860}
+2025-09-28 15:25:36,219 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 500, 'currency': 860}
+2025-09-28 15:25:48,158 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 500, 'currency': 860}
+2025-09-28 15:26:29,082 - INFO - [END] transfer_create | Time=133.8647s | Response=<oslash.either.Left object at 0x7de9e4227370>
+2025-09-28 15:27:50,991 - INFO - [END] transfer_create | Time=134.7718s | Response=<oslash.either.Left object at 0x7de9e62093f0>
+2025-09-28 15:28:03,281 - INFO - [END] transfer_create | Time=135.1227s | Response=<oslash.either.Left object at 0x7de9e6216950>
+2025-09-28 15:34:50,739 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 500, 'currency': 860}
+2025-09-28 15:37:03,941 - INFO - [END] transfer_create | Time=133.2016s | Response=<oslash.either.Left object at 0x7de9e40f5e40>
+2025-09-28 15:57:46,650 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 500, 'currency': 860}
+2025-09-28 15:57:46,664 - INFO - [END] transfer_create | Time=0.0138s | Response=<oslash.either.Left object at 0x7fa969ac4910>
+2025-09-28 15:57:59,076 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 15:57:59,086 - INFO - [END] transfer_create | Time=0.0105s | Response=<oslash.either.Left object at 0x7fa969a4dfc0>
+2025-09-28 16:00:33,085 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 16:00:33,109 - INFO - [END] transfer_create | Time=0.0238s | Response=<oslash.either.Left object at 0x7f45213dd0f0>
+2025-09-28 16:04:12,612 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 16:04:12,621 - INFO - [END] transfer_create | Time=0.0089s | Response=<oslash.either.Left object at 0x7f4521365ae0>
+2025-09-28 16:05:13,246 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 16:05:13,267 - INFO - [END] transfer_create | Time=0.0215s | Response=<oslash.either.Left object at 0x7fdf82104d30>
+2025-09-28 16:11:43,719 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 16:11:43,743 - INFO - [END] transfer_create | Time=0.0243s | Response=<oslash.either.Left object at 0x7f81805f8ca0>
+2025-09-28 17:54:26,379 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 17:54:26,399 - INFO - [END] transfer_create | Time=0.0197s | Response=<oslash.either.Left object at 0x7f81804f4670>
+2025-09-28 17:54:34,809 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 17:54:34,817 - INFO - [END] transfer_create | Time=0.0087s | Response=<oslash.either.Left object at 0x7f81804f67a0>
+2025-09-28 17:54:47,695 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 17:54:47,705 - INFO - [END] transfer_create | Time=0.0099s | Response=<oslash.either.Left object at 0x7f81805ae2c0>
+2025-09-28 17:57:01,480 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 17:57:01,501 - INFO - [END] transfer_create | Time=0.0206s | Response=<oslash.either.Left object at 0x7f81804e6110>
+2025-09-28 18:02:53,044 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:02:53,064 - INFO - [END] transfer_create | Time=0.0205s | Response=<oslash.either.Left object at 0x7fc79c3cd000>
+2025-09-28 18:05:08,066 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:05:08,076 - INFO - [END] transfer_create | Time=0.0099s | Response=<oslash.either.Left object at 0x72b6bfacfe00>
+2025-09-28 18:08:36,592 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '5614 681** **** 9303', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:08:36,595 - INFO - [END] transfer_create | Time=0.0025s | Response=<oslash.either.Left object at 0x7d1358ca5160>
+2025-09-28 18:11:56,715 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:11:56,747 - INFO - [END] transfer_create | Time=0.0322s | Response=<oslash.either.Left object at 0x7d1353f591d0>
+2025-09-28 18:17:50,355 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:30:00,701 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:31:02,675 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:31:02,709 - INFO - [END] transfer_create | Time=0.0346s | Response=<oslash.either.Left object at 0x770bc97bd940>
+2025-09-28 18:32:38,307 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:32:38,335 - INFO - [END] transfer_create | Time=0.0281s | Response=<oslash.either.Left object at 0x7dc3c4fb9e80>
+2025-09-28 18:33:05,663 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:33:05,689 - INFO - [END] transfer_create | Time=0.0258s | Response=<oslash.either.Left object at 0x7caaa41017f0>
+2025-09-28 18:33:06,950 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:33:06,958 - INFO - [END] transfer_create | Time=0.0077s | Response=<oslash.either.Left object at 0x7caaa414ccd0>
+2025-09-28 18:34:22,567 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:34:22,591 - INFO - [END] transfer_create | Time=0.0241s | Response=<oslash.either.Left object at 0x768d802f97f0>
+2025-09-28 18:59:54,924 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 18:59:54,951 - INFO - [END] transfer_create | Time=0.0277s | Response=<oslash.either.Left object at 0x7deb5fb05940>
+2025-09-28 19:02:33,480 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-28 19:34:46,895 - INFO - [END] transfer_create | Time=1933.4151s | Response=<oslash.either.Left object at 0x7f39093a6f90>
+2025-09-29 22:12:41,844 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-29 22:12:41,907 - INFO - [END] transfer_create | Time=0.0623s | Response=<oslash.either.Left object at 0x7f317e92f490>
+2025-09-29 22:18:28,344 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-29 22:18:29,444 - INFO - [END] transfer_create | Time=1.0998s | Response=<oslash.either.Right object at 0x7f147db2bcd0>
+2025-09-29 22:18:50,072 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-c382c8c3-4fb2-4904-a4aa-843e79aa2b03', 'otp': '*****9'}
+2025-09-29 22:18:50,092 - INFO - [END] transfer_confirm | Time=0.0196s | Response=<oslash.either.Right object at 0x7f147da0d1e0>
+2025-09-30 08:47:13,149 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-09-30 08:47:14,608 - INFO - [END] transfer_create | Time=1.4598s | Response=<oslash.either.Right object at 0x7f147cd9bf10>
+2025-09-30 08:47:50,913 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-96f3419c-0bb6-4e2f-9dec-a816f7a2e2e9', 'otp': '*****5'}
+2025-09-30 08:47:50,959 - INFO - [END] transfer_confirm | Time=0.0463s | Response=<oslash.either.Right object at 0x7f147cfe6ef0>
+2025-10-04 15:45:08,806 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-10-04 15:45:09,939 - INFO - [END] transfer_create | Time=1.1336s | Response=<oslash.either.Right object at 0x7f72a008f400>
+2025-10-04 15:45:39,854 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-1a676b5d-83d2-46b6-ba83-594cdb8d7590', 'otp': '*****8'}
+2025-10-04 15:45:39,870 - INFO - [END] transfer_confirm | Time=0.0166s | Response=<oslash.either.Left object at 0x7f72a0423940>
+2025-10-04 15:45:52,826 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-1a676b5d-83d2-46b6-ba83-594cdb8d7590', 'otp': '*****9'}
+2025-10-04 15:45:52,858 - INFO - [END] transfer_confirm | Time=0.0322s | Response=<oslash.either.Right object at 0x7f72a02fdc90>
+2025-10-04 17:46:29,008 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-10-04 17:46:30,488 - INFO - [END] transfer_create | Time=1.4806s | Response=<oslash.either.Right object at 0x7f5e74728e20>
+2025-10-04 17:46:46,280 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-f65d9719-75d2-45ad-92bd-047cf435262b', 'otp': '*****7'}
+2025-10-04 17:46:46,303 - INFO - [END] transfer_confirm | Time=0.0233s | Response=<oslash.either.Right object at 0x7f5e7458a0e0>
+2025-10-04 17:54:18,690 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-10-04 17:54:20,255 - INFO - [END] transfer_create | Time=1.5649s | Response=<oslash.either.Right object at 0x7fb922be2800>
+2025-10-04 17:54:37,978 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-2be7c8a2-cc03-4360-b1ee-d30a8264a074', 'otp': '*****3'}
+2025-10-04 17:54:37,995 - INFO - [END] transfer_confirm | Time=0.0168s | Response=<oslash.either.Right object at 0x7fb922ba8250>
+2025-10-04 17:57:09,549 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 843}
+2025-10-04 17:57:09,555 - INFO - [END] transfer_create | Time=0.0057s | Response=<oslash.either.Left object at 0x7fb92203ac20>
+2025-10-04 17:57:26,829 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-10-04 17:57:27,934 - INFO - [END] transfer_create | Time=1.1054s | Response=<oslash.either.Right object at 0x7fb922cc7160>
+2025-10-04 17:57:36,408 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-a0a40623-0ce0-4723-a2fe-aa354ce0d10a', 'otp': '*****4'}
+2025-10-04 17:57:36,426 - INFO - [END] transfer_confirm | Time=0.018s | Response=<oslash.either.Right object at 0x7fb921e7ebc0>
+2025-10-04 18:16:34,358 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0439', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-10-04 18:16:34,367 - INFO - [END] transfer_create | Time=0.0093s | Response=<oslash.either.Left object at 0x7fa5117323e0>
+2025-10-04 18:16:36,908 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0439', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-10-04 18:16:36,915 - INFO - [END] transfer_create | Time=0.0075s | Response=<oslash.either.Left object at 0x7fa511758b20>
+2025-10-04 18:16:37,689 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0439', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-10-04 18:16:37,694 - INFO - [END] transfer_create | Time=0.0054s | Response=<oslash.either.Left object at 0x7fa511758af0>
+2025-10-04 18:16:38,351 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0439', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-10-04 18:16:38,377 - INFO - [END] transfer_create | Time=0.0255s | Response=<oslash.either.Left object at 0x7fa511759cc0>
+2025-10-04 18:16:38,942 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0439', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1, 'currency': 840}
+2025-10-04 18:16:38,947 - INFO - [END] transfer_create | Time=0.0054s | Response=<oslash.either.Left object at 0x7fa51175bd30>
+2025-10-04 18:21:14,789 - INFO - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-10-04 18:21:16,505 - INFO - [END] transfer_create | Time=1.7161s | Response=<oslash.either.Right object at 0x7fa51191fd90>
+2025-10-04 18:21:26,089 - INFO - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-c21ed98f-38db-42ca-a526-797ac71fc281', 'otp': '*****3'}
+2025-10-04 18:21:26,109 - INFO - [END] transfer_confirm | Time=0.0194s | Response=<oslash.either.Right object at 0x7fa51175b9d0>
+2025-10-04 18:21:52,304 - INFO - [START] transfer_cancel | IP=unknown | args=() kwargs={'ext_id': 'tr-c21ed98f-38db-42ca-a526-797ac71fc281'}
+2025-10-04 18:21:52,315 - INFO - [END] transfer_cancel | Time=0.0114s | Response=<oslash.either.Right object at 0x7fa5117582e0>
+2025-10-04 18:41:17,726 - INFO - unisoft - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-10-04 18:41:18,647 - INFO - unisoft - [END] transfer_create | Time=0.9214s | Response=<oslash.either.Right object at 0x7fd230640eb0>
+2025-10-04 18:41:32,499 - INFO - unisoft - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-a81704bc-6bdc-43a7-a03c-4a0b63631f88', 'otp': '*****6'}
+2025-10-04 18:41:32,516 - INFO - unisoft - [END] transfer_confirm | Time=0.0177s | Response=<oslash.either.Right object at 0x7fd2304d5b40>
+2025-10-04 18:41:55,368 - INFO - unisoft - [START] transfer_cancel | IP=unknown | args=() kwargs={'ext_id': 'tr-a81704bc-6bdc-43a7-a03c-4a0b63631f88'}
+2025-10-04 18:41:55,381 - INFO - unisoft - [END] transfer_cancel | Time=0.0123s | Response=<oslash.either.Right object at 0x7fd2304d4a30>
+2025-10-04 18:44:21,544 - INFO - unisoft - [START] transfer_history | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'start_date': '2025-10-01', 'end_date': '2025-10-05', 'status': 'confirmed'}
+2025-10-04 18:44:21,549 - INFO - unisoft - [END] transfer_history | Time=0.0049s | Response=<oslash.either.Left object at 0x7fac14515030>
+2025-10-04 18:50:30,190 - INFO - unisoft - [START] transfer_history | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'start_date': '2025-10-01', 'end_date': '2025-10-05', 'status': 'confirmed'}
+2025-10-04 18:50:30,194 - ERROR - unisoft - Error in transfer_history: Cannot resolve keyword 'sender' into field. Choices are: cancelled_at, confirmed_at, created_at, currency, exchange_rate, ext_id, id, rate_updated_at, receiver_id, receiving_amount, sender_id, sending_amount, state, updated_at
+Traceback (most recent call last):
+  File "/app/transfer/views.py", line 410, in transfer_history
+    transfers_qs = Transfer.objects.filter(
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1526, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1333, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1805, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'sender' into field. Choices are: cancelled_at, confirmed_at, created_at, currency, exchange_rate, ext_id, id, rate_updated_at, receiver_id, receiving_amount, sender_id, sending_amount, state, updated_at
+2025-10-04 18:50:30,206 - INFO - unisoft - [END] transfer_history | Time=0.0166s | Response=<oslash.either.Left object at 0x7f2932ff2500>
+2025-10-04 18:56:28,623 - INFO - unisoft - [START] transfer_history | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'start_date': '2025-10-01', 'end_date': '2025-10-05', 'status': 'confirmed'}
+2025-10-04 18:56:28,658 - ERROR - unisoft - Error in transfer_history: SQLite backend does not support timezone-aware datetimes when USE_TZ is False.
+Traceback (most recent call last):
+  File "/app/transfer/views.py", line 427, in transfer_history
+    for t in transfers_qs:
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 384, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1610, in execute_sql
+    sql, params = self.as_sql()
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 794, in as_sql
+    self.compile(self.where) if self.where is not None else ("", [])
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 577, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/where.py", line 151, in as_sql
+    sql, params = compiler.compile(child)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 577, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/lookups.py", line 258, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/lookups.py", line 141, in process_rhs
+    return self.get_db_prep_lookup(value, connection)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/lookups.py", line 287, in get_db_prep_lookup
+    [
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/lookups.py", line 291, in <listcomp>
+    else get_db_prep_value(v, connection, prepared=True)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1684, in get_db_prep_value
+    return connection.ops.adapt_datetimefield_value(value)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/sqlite3/operations.py", line 281, in adapt_datetimefield_value
+    raise ValueError(
+ValueError: SQLite backend does not support timezone-aware datetimes when USE_TZ is False.
+2025-10-04 18:56:28,692 - INFO - unisoft - [END] transfer_history | Time=0.0685s | Response=<oslash.either.Left object at 0x7f32ae426fe0>
+2025-10-04 18:59:34,097 - INFO - unisoft - [START] transfer_history | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'start_date': '2025-10-01', 'end_date': '2025-10-05', 'status': 'confirmed'}
+2025-10-04 18:59:34,122 - INFO - unisoft - [END] transfer_history | Time=0.0244s | Response=<oslash.either.Right object at 0x7f3a1affa1a0>
+2025-10-04 18:59:44,737 - INFO - unisoft - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-10-04 18:59:46,112 - INFO - unisoft - [END] transfer_create | Time=1.3751s | Response=<oslash.either.Right object at 0x7f3a1badfeb0>
+2025-10-04 18:59:53,363 - INFO - unisoft - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-1f2eb822-a491-4676-979f-d8780bae534c', 'otp': '*****1'}
+2025-10-04 18:59:53,387 - INFO - unisoft - [END] transfer_confirm | Time=0.0244s | Response=<oslash.either.Right object at 0x7f3a1aebb1f0>
+2025-10-04 18:59:57,829 - INFO - unisoft - [START] transfer_state | IP=unknown | args=() kwargs={'ext_id': 'tr-1f2eb822-a491-4676-979f-d8780bae534c'}
+2025-10-04 18:59:57,835 - INFO - unisoft - [END] transfer_state | Time=0.0063s | Response=<oslash.either.Right object at 0x7f3a1aebaa40>
+2025-10-04 19:00:01,205 - INFO - unisoft - [START] transfer_history | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'start_date': '2025-10-01', 'end_date': '2025-10-05', 'status': 'confirmed'}
+2025-10-04 19:00:01,216 - INFO - unisoft - [END] transfer_history | Time=0.0114s | Response=<oslash.either.Right object at 0x7f3a1aebb340>
+2025-10-04 19:00:16,618 - INFO - unisoft - [START] transfer_cancel | IP=unknown | args=() kwargs={'ext_id': 'tr-1f2eb822-a491-4676-979f-d8780bae534c'}
+2025-10-04 19:00:16,638 - INFO - unisoft - [END] transfer_cancel | Time=0.0193s | Response=<oslash.either.Right object at 0x7f3a1aeb8af0>
+2025-10-04 19:00:24,867 - INFO - unisoft - [START] transfer_history | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'start_date': '2025-10-01', 'end_date': '2025-10-05', 'status': 'concelled'}
+2025-10-04 19:00:24,874 - INFO - unisoft - [END] transfer_history | Time=0.0071s | Response=<oslash.either.Left object at 0x7f3a1aeb97e0>
+2025-10-04 19:00:38,300 - INFO - unisoft - [START] transfer_history | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'start_date': '2025-10-01', 'end_date': '2025-10-05', 'status': 'cancelled'}
+2025-10-04 19:00:38,307 - INFO - unisoft - [END] transfer_history | Time=0.0077s | Response=<oslash.either.Right object at 0x7f3a1aeb9810>
+2025-10-04 19:06:26,968 - INFO - unisoft - [START] card_add | IP=unknown | args=() kwargs={'card_number': '8600123412341234', 'expire': '12/26', 'phone': '+998901234567', 'status': 'active', 'balance': 100000}
+2025-10-04 19:06:27,109 - INFO - unisoft - [END] card_add | Time=0.1418s | Response=<oslash.either.Left object at 0x7f4b77fe7e50>
+2025-10-04 19:06:33,671 - INFO - unisoft - [START] card_add | IP=unknown | args=() kwargs={'card_number': '8600123412341234', 'expire': '12/26', 'phone': '998901234567', 'status': 'active', 'balance': 100000}
+2025-10-04 19:06:33,702 - INFO - unisoft - [END] card_add | Time=0.0313s | Response=<oslash.either.Left object at 0x7f4b7c2290f0>
+2025-10-04 19:08:41,032 - INFO - unisoft - [START] card_add | IP=unknown | args=() kwargs={'card_number': '9860140114330149', 'expire': '12/26', 'phone': '998901234567', 'status': 'active', 'balance': 100000}
+2025-10-04 19:08:41,049 - INFO - unisoft - [END] card_add | Time=0.0163s | Response=<oslash.either.Left object at 0x7f4b7c181f60>
+2025-10-04 19:09:03,771 - INFO - unisoft - [START] card_add | IP=unknown | args=() kwargs={'card_number': '5614681212949303', 'expire': '12/26', 'phone': '998901234567', 'status': 'active', 'balance': 100000}
+2025-10-04 19:09:03,831 - INFO - unisoft - [END] card_add | Time=0.0595s | Response=<oslash.either.Right object at 0x7f4b7c0677f0>
+2025-10-04 19:09:20,577 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '5614681212949303', 'expire': '12/26'}
+2025-10-04 19:09:20,590 - INFO - unisoft - [END] card_info | Time=0.0128s | Response=<oslash.either.Left object at 0x7f4b77510130>
+2025-10-04 19:09:44,763 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '5614 6812 1294 9303', 'expire': '12/26'}
+2025-10-04 19:09:44,774 - INFO - unisoft - [END] card_info | Time=0.0111s | Response=<oslash.either.Left object at 0x7f4b77f000a0>
+2025-10-04 19:10:08,884 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '5614681212949303', 'expire': '12/26'}
+2025-10-04 19:10:08,898 - INFO - unisoft - [END] card_info | Time=0.014s | Response=<oslash.either.Left object at 0x7f4b77fe7fa0>
+2025-10-04 19:10:10,958 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '5614681212949303', 'expire': '12/26'}
+2025-10-04 19:10:10,961 - INFO - unisoft - [END] card_info | Time=0.0022s | Response=<oslash.either.Left object at 0x7f4b775a3c70>
+2025-10-04 19:10:11,753 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '5614681212949303', 'expire': '12/26'}
+2025-10-04 19:10:11,755 - INFO - unisoft - [END] card_info | Time=0.0019s | Response=<oslash.either.Left object at 0x7f4b775a1e10>
+2025-10-04 19:10:12,344 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '5614681212949303', 'expire': '12/26'}
+2025-10-04 19:10:12,348 - INFO - unisoft - [END] card_info | Time=0.0041s | Response=<oslash.either.Left object at 0x7f4b775a2860>
+2025-10-04 19:10:53,895 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'expire': '09/29'}
+2025-10-04 19:10:53,907 - INFO - unisoft - [END] card_info | Time=0.0115s | Response=<oslash.either.Left object at 0x7f4b7c078ac0>
+2025-10-04 19:13:53,488 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'expire': '09/29'}
+2025-10-04 19:13:53,800 - ERROR - unisoft - [ERROR] card_info | Time=0.2913s | Exception=Error -3 connecting to redis_service:6379. Temporary failure in name resolution. | Traceback:
+Traceback (most recent call last):
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/connection.py", line 970, in _connect
+    for res in socket.getaddrinfo(
+               ~~~~~~~~~~~~~~~~~~^
+        self.host, self.port, self.socket_type, socket.SOCK_STREAM
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "/usr/lib/python3.13/socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/abdulloh/Documents/kochirish/Projects/Python/Bank/utils/logging_decorator.py", line 50, in wrapper
+    response = func(*args, **kwargs)
+  File "/home/abdulloh/Documents/kochirish/Projects/Python/Bank/card/views.py", line 236, in card_info
+    cached_response = cache.get(cache_key)
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/django/core/cache/backends/redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/django/core/cache/backends/redis.py", line 100, in get
+    value = client.get(key)
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/commands/core.py", line 1801, in get
+    return self.execute_command("GET", name)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/client.py", line 1266, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/connection.py", line 1457, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error -3 connecting to redis_service:6379. Temporary failure in name resolution.
+
+2025-10-04 19:14:43,128 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'expire': '09/29'}
+2025-10-04 19:14:43,133 - INFO - unisoft - [END] card_info | Time=0.0052s | Response=<oslash.either.Left object at 0x7db238b39e80>
+2025-10-04 19:15:14,532 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'expire': '09/29'}
+2025-10-04 19:15:14,537 - INFO - unisoft - [END] card_info | Time=0.0048s | Response=<oslash.either.Left object at 0x7935388a23c0>
+2025-10-04 19:16:59,582 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'expire': '09/29'}
+2025-10-04 19:16:59,586 - INFO - unisoft - [END] card_info | Time=0.0045s | Response=<oslash.either.Right object at 0x74f9290b8e90>
+2025-10-04 19:22:05,138 - INFO - unisoft - [START] card_import | IP=unknown | args=() kwargs={'file_path': '/home/abdulloh/Downloads/selected_cards(1).csv'}
+2025-10-04 19:22:05,543 - ERROR - unisoft - [ERROR] card_import | Time=0.3858s | Exception=Error -3 connecting to redis_service:6379. Temporary failure in name resolution. | Traceback:
+Traceback (most recent call last):
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/connection.py", line 970, in _connect
+    for res in socket.getaddrinfo(
+               ~~~~~~~~~~~~~~~~~~^
+        self.host, self.port, self.socket_type, socket.SOCK_STREAM
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "/usr/lib/python3.13/socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/abdulloh/Documents/kochirish/Projects/Python/Bank/utils/logging_decorator.py", line 50, in wrapper
+    response = func(*args, **kwargs)
+  File "/home/abdulloh/Documents/kochirish/Projects/Python/Bank/card/views.py", line 50, in card_import
+    cached_response = cache.get(cache_key)
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/django/core/cache/backends/redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/django/core/cache/backends/redis.py", line 100, in get
+    value = client.get(key)
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/commands/core.py", line 1801, in get
+    return self.execute_command("GET", name)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/client.py", line 1266, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/connection.py", line 1457, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/abdulloh/.local/lib/python3.13/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error -3 connecting to redis_service:6379. Temporary failure in name resolution.
+
+2025-10-04 19:34:45,218 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'expire': '09/29'}
+2025-10-04 19:34:45,227 - INFO - unisoft - [END] card_info | Time=0.0083s | Response=<oslash.either.Right object at 0x7f9dbb21b3a0>
+2025-10-04 19:43:24,537 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'expire': '09/29'}
+2025-10-04 19:43:24,552 - INFO - unisoft - [END] card_info | Time=0.0146s | Response=<oslash.either.Right object at 0x7fcbd7d4b970>

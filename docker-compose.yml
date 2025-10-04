@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   web:
     build: .
@@ -5,18 +7,27 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
+      - ./db.sqlite3:/app/db.sqlite3
     environment:
-      - REDIS_HOST=redis
+      - REDIS_HOST=redis_service
     ports:
       - "8000:8000"
     depends_on:
       - redis
+    networks:
+      custom_net:
+        aliases:
+          - web_service
 
   redis:
     image: redis:alpine
     container_name: redis_broker
     ports:
       - "6379:6379"
+    networks:
+      custom_net:
+        aliases:
+          - redis_service   # 🔑 barqaror nom
 
   celery:
     build: .
@@ -24,11 +35,16 @@ services:
     command: celery -A src worker -l info
     volumes:
       - .:/app
+      - ./db.sqlite3:/app/db.sqlite3
     environment:
-      - REDIS_HOST=redis   # docker ichida redis service nomi
+      - REDIS_HOST=redis_service
     depends_on:
       - redis
       - web
+    networks:
+      custom_net:
+        aliases:
+          - celery_service
 
   celery_beat:
     build: .
@@ -36,8 +52,20 @@ services:
     command: celery -A src beat -l info
     volumes:
       - .:/app
+      - ./db.sqlite3:/app/db.sqlite3
     environment:
-      - REDIS_HOST=redis
+      - REDIS_HOST=redis_service
     depends_on:
       - redis
       - web
+    networks:
+      custom_net:
+        aliases:
+          - celery_beat_service
+
+volumes:
+  db_data:
+
+networks:
+  custom_net:
+    driver: bridge

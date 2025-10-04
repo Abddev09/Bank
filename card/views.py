@@ -1,60 +1,78 @@
 import json
+import time
 import traceback
 import pandas as pd
 from django.core.cache import cache
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+from django_ratelimit.decorators import ratelimit
 from jsonrpcserver import method, Error, Success, dispatch
 from card.models import Card
 from card.serializers import CardSerializer
-from utils import format_card_number, format_phone_number, format_expire, format_balance, card_mask
+from utils import format_card_number, format_phone_number, format_expire, format_balance, card_mask, luhn_check
 from handlers import get_error_response
+from utils.logging_decorator import log_request_response
 
-
-"""  Card Import from exel  """
-@method(name="card.import")
-def card_import(file_path: str):
+@csrf_exempt
+@ratelimit(key='ip', rate='5/m', block=True)
+@require_POST
+def card_import_rest(request):
     """
-       Import cards from a CSV or Excel file and insert/update them in the database.
+    POST /api/cards/import/
+    Upload and import card data from a CSV or Excel file.
 
-       Args:
-           file_path (str): The path to the CSV or Excel file containing card data.
+    Request:
+        Content-Type: multipart/form-data
+        file: (required) CSV or Excel file containing:
+              card_number, expire, phone, status, balance
 
-       Returns:
-           Success: On success, returns a JSON-RPC success response containing:
-               {
-                   "message": "Import successful",
-                   "created": int,  # number of new cards created
-                   "updated": int   # number of existing cards updated
-               }
-           Error: On failure, returns a JSON-RPC error response with error code and details.
+    Response (200 OK):
+    {
+        "message": "Import successful",
+        "created": 10,
+        "updated": 5
+    }
 
-       Notes:
-           - The function supports `.csv` and `.xlsx` (Excel) formats.
-           - Each row must contain: `card_number`, `expire`, `phone`, `status`, `balance`.
-           - Cache is cleared after import because DB state has changed.
-           - The result is cached for 30 seconds to prevent duplicate imports.
-
-       Example:
-           >>> card_import("cards.xlsx")
-           {
-               "message": "Import successful",
-               "created": 100,
-               "updated": 25
-           }
-       """
-    cache_key = f"card_import_{hash(file_path)}"
-    cached_response = cache.get(cache_key)
-    if cached_response:
-        return cached_response
+    Response (400/500):
+    {
+        "error": {
+            "code": 32706,
+            "message": "File not provided",
+            "data": {...}
+        }
+    }
+    """
 
     try:
-        if file_path.endswith(".csv"):
-            df = pd.read_csv(file_path)
+        file = request.FILES.get("file")
+        if not file:
+            error_info = get_error_response(32713)
+            return JsonResponse({
+                "error": {
+                    "code": error_info["code"],
+                    "message": "File not provided",
+                    "data": error_info
+                }
+            }, status=400)
+
+        # Fayl turi bo‘yicha aniqlash
+        if file.name.endswith(".csv"):
+            df = pd.read_csv(file)
+        elif file.name.endswith((".xls", ".xlsx")):
+            df = pd.read_excel(file, engine="openpyxl")
         else:
-            df = pd.read_excel(file_path, engine="openpyxl")
+            error_info = get_error_response(32713)
+            return JsonResponse({
+                "error": {
+                    "code": error_info["code"],
+                    "message": "Unsupported file format (use .csv or .xlsx)",
+                    "data": error_info
+                }
+            }, status=400)
 
         created_count, updated_count = 0, 0
+
         for _, row in df.iterrows():
             card_number = format_card_number(row.get("card_number"))
             expire = format_expire(row.get("expire"))
@@ -74,33 +92,39 @@ def card_import(file_path: str):
                     "balance": balance,
                 },
             )
+
             if created:
                 created_count += 1
             else:
                 updated_count += 1
 
-        response = Success({
+        # DB o‘zgargan — cache’ni tozalaymiz
+        cache.clear()
+
+        return JsonResponse({
             "message": "Import successful",
             "created": created_count,
             "updated": updated_count,
-        })
-
-        # ✅ Import tugaganidan keyin cache tozalanadi (chunki DB o‘zgardi)
-        cache.clear()
+        }, status=200)
 
     except Exception as e:
         tb = traceback.format_exc()
-        print("ERROR in card_import:\n", tb)
+        print("ERROR in card_import_rest:\n", tb)
         error_info = get_error_response(32706)
-        response = Error(code=error_info["code"], message=str(e), data=error_info)
-
-    cache.set(cache_key, response, timeout=30)
-    return response
+        return JsonResponse({
+            "error": {
+                "code": error_info["code"],
+                "message": str(e),
+                "data": error_info
+            }
+        }, status=500)
 
 
 
 """  Card Add  """
+@ratelimit(key='ip', rate='5/m', block=True)
 @method(name="card.add")
+@log_request_response
 def card_add(**params):
     """
         Add a new card to the database via JSON-RPC.
@@ -166,7 +190,7 @@ def card_add(**params):
                 "status": data.get("status"),
                 "balance": data.get("balance"),
             })
-            # ✅ Yangi karta qo‘shilganda eski cache’lar tozalanadi
+
             cache.clear()
         else:
             error_info = get_error_response(32713)
@@ -192,7 +216,9 @@ def card_add(**params):
 
 
 """  Card Info  """
+@ratelimit(key='ip', rate='5/m', block=True)
 @method(name="card.info")
+@log_request_response
 def card_info(**params):
     """
         Retrieve information about a specific card.
@@ -225,13 +251,11 @@ def card_info(**params):
                 "masked_card": "8600 **** **** 1234"
             }
         """
-    cache_key = f"card_info_{hash(frozenset(params.items()))}"
-    cached_response = cache.get(cache_key)
-    if cached_response:
-        return cached_response
+
 
     try:
         card_number = format_card_number(params.get("card_number"))
+        card_number = card_number.replace(" ", "")
         expire = format_expire(params.get("expire"))
         card = Card.objects.filter(card_number=card_number, expire=expire).first()
         if not card:
@@ -255,26 +279,71 @@ def card_info(**params):
         error_info = get_error_response(32706)
         response = Error(code=error_info["code"], message=str(e), data=error_info)
 
-    cache.set(cache_key, response, timeout=30)
     return response
 
 
 
 """  Card JSONRPC Dispatcher  """
+RATE_LIMIT_COUNT = 5   # misol uchun 5 ta so‘rov
+RATE_LIMIT_WINDOW = 60 # soniyada — 1 daqiqa
+
+def _get_client_ip(request):
+    # Reverse proxy ishlatilsa X-Forwarded-For ni ham tekshirish mumkin
+    return request.META.get('REMOTE_ADDR', 'unknown')
+
+
 @csrf_exempt
 def jsonrpc(request):
     if request.method == 'POST':
+        payload = {}  # ✅ oldindan aniqlaymiz, har holda mavjud bo‘ladi
+
         try:
-            request_body = request.body.decode()
-            result = dispatch(request_body)
+            body = request.body.decode()
+            payload = json.loads(body)
+            method_name = payload.get("method", "")
+        except Exception:
+            method_name = ""
+
+        # --- Rate limit: kalit IP + method bo‘yicha
+        ip = _get_client_ip(request)
+        rl_key = f"rl:{ip}:{method_name}"
+        now = int(time.time())
+
+        data = cache.get(rl_key)
+        if not data:
+            # birinchi urinish
+            cache.set(rl_key, (1, now), timeout=RATE_LIMIT_WINDOW)
+        else:
+            count, start = data
+            if now - start < RATE_LIMIT_WINDOW:
+                count += 1
+                cache.set(rl_key, (count, start), timeout=RATE_LIMIT_WINDOW - (now - start))
+                if count > RATE_LIMIT_COUNT:
+                    # 🚫 Rate limit blok
+                    return JsonResponse({
+                        "jsonrpc": "2.0",
+                        "error": {
+                            "code": -32000,
+                            "message": "Too many requests (rate limit)"
+                        },
+                        "id": payload.get("id")  # ✅ endi mavjud bo‘ladi
+                    }, status=429)
+            else:
+                # yangi oynani boshlaymiz
+                cache.set(rl_key, (1, now), timeout=RATE_LIMIT_WINDOW)
+
+        # --- End rate limit, endi JSON-RPC metodni ishlatamiz
+        try:
+            result = dispatch(body)
             if isinstance(result, str):
                 result = json.loads(result)
             return JsonResponse(result, safe=False)
-        except Exception as e:
+        except Exception:
             error_info = get_error_response(32713)
             return JsonResponse({
                 "jsonrpc": "2.0",
                 "error": error_info,
-                "id": None
-            })
-    return JsonResponse({'message': 'error'})
+                "id": payload.get("id", None)
+            }, status=500)
+
+    return JsonResponse({'message': 'Only POST allowed'}, status=405)

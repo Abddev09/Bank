@@ -15,4 +15,8 @@ app.conf.beat_schedule = {
         'task': 'transfer.tasks.send_report',
         'schedule': crontab(minute='0'),
     },
+    'update-currency-rates-every-12h': {
+        'task': 'transfer.tasks.update_currency_rates',
+        'schedule': crontab(minute=0, hour='*/12'),  # har 12 soatda
+    },
 }

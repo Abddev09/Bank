@@ -1,15 +1,14 @@
 from django.http import HttpResponse
-from django.contrib import admin, messages as mes
+from django.contrib import admin
 from import_export.admin import ImportExportMixin
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
-from openpyxl.utils import get_column_letter
 import csv
 from collections import defaultdict
 
 from card.models import Card
 from .models import Transfer, Error
-from utils import format_card_number, format_phone_number, format_expire, format_balance, card_mask
+from utils import format_card_number, format_phone_number,  format_balance
 
 
 # ---------- helper: write sheet ----------
@@ -18,25 +17,21 @@ def _write_sheet_from_rows(ws, headers, rows):
     header_font = Font(bold=True, color="FFFFFF")
     align = Alignment(horizontal="center", vertical="center")
 
-    # write headers
+    # headers
     for col_num, column_title in enumerate(headers, 1):
         cell = ws.cell(row=1, column=col_num, value=column_title)
         cell.fill = header_fill
         cell.font = header_font
         cell.alignment = align
 
-    # write rows
+    # rows
     for r_idx, row in enumerate(rows, start=2):
         for c_idx, value in enumerate(row, start=1):
             cell = ws.cell(row=r_idx, column=c_idx, value=value)
             cell.alignment = align
 
-    # auto-filter and freeze header
-    last_col = get_column_letter(len(headers))
-    ws.auto_filter.ref = f"A1:{last_col}{ws.max_row}"
     ws.freeze_panes = "A2"
 
-    # auto column width
     for column_cells in ws.columns:
         length = max(len(str(cell.value)) if cell.value else 0 for cell in column_cells)
         ws.column_dimensions[column_cells[0].column_letter].width = length + 3
@@ -48,35 +43,29 @@ def _write_sheet_from_rows(ws, headers, rows):
 @admin.register(Transfer)
 class TransferAdmin(ImportExportMixin, admin.ModelAdmin):
     list_display = (
-        'ext_id', 'display_sender_card_number', 'display_receiver_card_number',
-        'sending_amount', 'created_at', 'confirmed_at', 'cancelled_at',
-        'sender_phone', 'state'
+        'ext_id', 'sender_id', 'receiver_id', 'display_sending_amount', 'confirmed_at', 'get_state_display'
     )
     search_fields = [
-        'ext_id','sender_card_number','receiver_card_number',
-        'sending_amount','created_at','confirmed_at','cancelled_at','sender_phone','state'
+        'ext_id', 'sender_id', 'receiver_id', 'sending_amount', 'created_at', 'confirmed_at', 'cancelled_at', 'state'
     ]
 
-
-    @admin.display(description="Sender Card number")
-    def display_sender_card_number(self, obj):
-        print(obj)
-        return card_mask(format_card_number(obj.sender_card_number))
-
-    @admin.display(description="Receiver Card number")
-    def display_receiver_card_number(self, obj):
-        return card_mask(format_card_number(obj.receiver_card_number))
-
+    @admin.display(description="Sending amount")
+    def display_sending_amount(self, obj):
+        if obj.currency == "840":
+            return f'{obj.sending_amount} USD'
+        elif obj.currency == "860":
+            return f'{obj.sending_amount} UZS'
+        elif obj.currency == "643":
+            return f'{obj.sending_amount} RUB'
+        return obj.sending_amount
 
     actions = ["export_selected_xlsx", "export_filtered_xlsx", "export_selected_csv"]
 
-    # Export selected transfers as Excel and include Crosscheck sheet
     def export_selected_xlsx(self, request, queryset):
         return self._export_transfers_with_crosscheck(queryset, filename="selected_transfers.xlsx")
 
     export_selected_xlsx.short_description = "Export selected transfers to Excel (with crosscheck)"
 
-    # Export filtered (visible) transfers as Excel and include Crosscheck sheet
     def export_filtered_xlsx(self, request, queryset):
         qs = self.get_queryset(request)
         return self._export_transfers_with_crosscheck(qs, filename="filtered_transfers.xlsx")
@@ -85,30 +74,24 @@ class TransferAdmin(ImportExportMixin, admin.ModelAdmin):
 
     def _export_transfers_with_crosscheck(self, transfers_qs, filename="transfers.xlsx"):
         wb = Workbook()
-        # Transfers sheet
         ws = wb.active
         ws.title = "transfers"
         headers = [
-            "Ext ID", "Sender Card", "Receiver Card", "Sender Expiry",
-            "Sender Phone", "Receiver Phone", "Amount", "Currency", "Receiving Amount",
-            "State", "Try Count", "Created At", "Confirmed At", "Cancelled At"
+            "Ext ID", "Sender ID", "Receiver ID",
+            "Amount", "Currency", "Receiving Amount",
+            "State", "Created At", "Confirmed At", "Cancelled At"
         ]
 
-        # prepare transfer rows
         transfer_rows = []
         for t in transfers_qs:
             transfer_rows.append([
                 t.ext_id,
-                format_card_number(t.sender_card_number),
-                format_card_number(t.receiver_card_number),
-                format_expire(t.sender_card_expiry) if getattr(t, "sender_card_expiry", None) else "",
-                format_phone_number(t.sender_phone),
-                format_phone_number(t.receiver_phone),
+                t.sender_id,
+                t.receiver_id,
                 t.sending_amount,
                 t.currency,
                 t.receiving_amount,
-                t.get_state_display() if hasattr(t, "get_state_display") else t.state,
-                t.try_count,
+                t.get_state_display(),
                 t.created_at,
                 t.confirmed_at,
                 t.cancelled_at,
@@ -116,39 +99,35 @@ class TransferAdmin(ImportExportMixin, admin.ModelAdmin):
 
         _write_sheet_from_rows(ws, headers, transfer_rows)
 
-        # Crosscheck sheet (based on the transfers_qs passed)
-        # Build counts from the provided transfers queryset (so filters apply)
+        # Crosscheck - Card modelining barcha ma'lumotlarini olish
         send_counts = defaultdict(int)
         recv_counts = defaultdict(int)
         last_transfer = {}
 
-        # use .values_list to be slightly more efficient
-        for sender, receiver, created in transfers_qs.values_list('sender_card_number', 'receiver_card_number', 'created_at'):
-            if sender:
-                sfn = format_card_number(sender)
-                send_counts[sfn] += 1
-                last_transfer[sfn] = max(last_transfer.get(sfn, created), created)
-            if receiver:
-                rfn = format_card_number(receiver)
-                recv_counts[rfn] += 1
-                last_transfer[rfn] = max(last_transfer.get(rfn, created), created)
+        for sender_id, receiver_id, created in transfers_qs.values_list('sender_id', 'receiver_id', 'created_at'):
+            if sender_id:
+                send_counts[sender_id] += 1
+                last_transfer[sender_id] = max(last_transfer.get(sender_id, created), created)
+            if receiver_id:
+                recv_counts[receiver_id] += 1
+                last_transfer[receiver_id] = max(last_transfer.get(receiver_id, created), created)
 
-        # build crosscheck rows from all cards (so you can see unused as well)
-        cards = Card.objects.all().values('card_number', 'phone', 'status', 'balance')
+        cards = Card.objects.all().values('id', 'card_number', 'phone', 'status', 'balance')
         cross_headers = [
-            "Card Number", "Phone", "Status", "Balance",
+            "Card ID", "Card Number", "Phone", "Status", "Balance",
             "Used as Sender", "Used as Receiver", "Transfers Count", "Last Transfer Date"
         ]
         cross_rows = []
         for c in cards:
-            cn = format_card_number(c['card_number'])
-            used_sender = send_counts.get(cn, 0) > 0
-            used_receiver = recv_counts.get(cn, 0) > 0
-            transfers_count = send_counts.get(cn, 0) + recv_counts.get(cn, 0)
-            last_dt = last_transfer.get(cn)
+            card_id = str(c['id'])
+            used_sender = send_counts.get(card_id, 0) > 0
+            used_receiver = recv_counts.get(card_id, 0) > 0
+            transfers_count = send_counts.get(card_id, 0) + recv_counts.get(card_id, 0)
+            last_dt = last_transfer.get(card_id)
             last_dt_iso = last_dt.isoformat() if last_dt else ""
             cross_rows.append([
-                cn,
+                card_id,
+                format_card_number(c['card_number']),
                 format_phone_number(c.get('phone') or ""),
                 c.get('status') or "",
                 format_balance(c.get('balance') or 0),
@@ -161,27 +140,24 @@ class TransferAdmin(ImportExportMixin, admin.ModelAdmin):
         ws2 = wb.create_sheet(title="crosscheck")
         _write_sheet_from_rows(ws2, cross_headers, cross_rows)
 
-        # prepare response
         response = HttpResponse(content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
         response['Content-Disposition'] = f'attachment; filename="{filename}"'
         wb.save(response)
         return response
 
-    # CSV fallback (kept for convenience)
     def export_selected_csv(self, request, queryset):
         response = HttpResponse(content_type="text/csv")
         response['Content-Disposition'] = 'attachment; filename="selected_transfers.csv"'
         writer = csv.writer(response)
-        writer.writerow(["Ext ID", "Sender Card", "Receiver Card", "Amount", "Currency", "State", "Sender Phone", "Created At"])
+        writer.writerow(["Ext ID", "Sender ID", "Receiver ID", "Amount", "Currency", "State", "Created At"])
         for obj in queryset:
             writer.writerow([
                 obj.ext_id,
-                obj.sender_card_number,
-                obj.receiver_card_number,
+                obj.sender_id,
+                obj.receiver_id,
                 obj.sending_amount,
                 obj.currency,
-                obj.get_state_display() if hasattr(obj, "get_state_display") else obj.state,
-                obj.sender_phone,
+                obj.get_state_display(),
                 obj.created_at,
             ])
         return response
@@ -190,7 +166,7 @@ class TransferAdmin(ImportExportMixin, admin.ModelAdmin):
 
 
 # ========================
-# ErrorAdmin (Excel export)
+# ErrorAdmin
 # ========================
 @admin.register(Error)
 class ErrorAdmin(ImportExportMixin, admin.ModelAdmin):

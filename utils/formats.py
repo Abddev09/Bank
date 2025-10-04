@@ -1,12 +1,30 @@
 
+import luhn
+
+def luhn_check(card_number: str) -> bool:
+    """
+    Luhn algoritmi bilan karta raqamini tekshirish
+    (luhn kutubxonasi orqali)
+    """
+    if not card_number or not card_number.isdigit():
+        return False
+    return luhn.verify(card_number)
+
 
 def format_card_number(card_number: str) -> str:
-    """Karta raqamini faqat raqamlardan 16 xonali qilib 4 guruh ko‘rinishida qaytaradi"""
-    digits = ''.join(filter(str.isdigit, str(card_number)))
-    if not digits:
-        return None
-    digits = digits.zfill(16)[:16]  # ortiqcha bo‘lsa kesamiz
-    return ' '.join(digits[i:i+4] for i in range(0, 16, 4))
+    """
+    Karta raqamini format qilish (4-4-4-4 ko'rinishda)
+    """
+    if not card_number:
+        return ""
+
+    # Faqat raqamlarni qoldirish
+    clean = ''.join(filter(str.isdigit, str(card_number)))
+
+    # 4 ta raqamdan keyin space qo'yish
+    formatted = ' '.join([clean[i: i +4] for i in range(0, len(clean), 4)])
+    return formatted
+
 
 
 def format_phone_number(phone_number: str) -> str:
