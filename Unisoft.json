@@ -1,0 +1,333 @@
+{
+  "info": {
+    "name": "Unisoft",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Cards",
+      "item": [
+        {
+          "name": "Create",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{api}}/cards/",
+              "protocol": "",
+              "host": [
+                "{{api}}"
+              ],
+              "path": [
+                "cards",
+                ""
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"card.add\",\n  \"params\": {\n    \"card_number\": \"5614681212949303\",\n    \"expire\": \"12/26\",\n    \"phone\": \"998901234567\",\n    \"status\": \"active\",\n    \"balance\": 100000\n  },\n  \"id\": 2\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Info",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{api}}/cards/",
+              "protocol": "",
+              "host": [
+                "{{api}}"
+              ],
+              "path": [
+                "cards",
+                ""
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"card.info\",\n  \"params\": {\n    \"card_number\": \"9860080121420436\",\n    \"expire\": \"09/29\"\n  },\n  \"id\": 3\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Import",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{api}}/cards/import/",
+              "protocol": "",
+              "host": [
+                "{{api}}"
+              ],
+              "path": [
+                "cards",
+                "import",
+                ""
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "value": [
+                    "/home/abdulloh/Downloads/selected_cards.xlsx"
+                  ],
+                  "disabled": false,
+                  "type": "default"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Transfers",
+      "item": [
+        {
+          "name": "Cancel",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{api}}/transfers/",
+              "protocol": "",
+              "host": [
+                "{{api}}"
+              ],
+              "path": [
+                "transfers",
+                ""
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\": \"transfer.cancel\",\n    \"params\": {\n        \"ext_id\":\"{{ext_id}}\"\n    },\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Confirm",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{api}}/transfers/",
+              "protocol": "",
+              "host": [
+                "{{api}}"
+              ],
+              "path": [
+                "transfers",
+                ""
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\": \"transfer.confirm\",\n    \"params\": {\n        \"ext_id\":\"{{ext_id}}\",\n        \"otp\":\"968636\"\n    },\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "test(\"Save ext_id if transfer.create\", function() {",
+                  "  const data = res.getBody();  // response body JSON sifatida avtomatik parse qilinadi",
+                  "  const reqBody = req.getBody(); // request body, string bo‘lishi mumkin",
+                  "",
+                  "  let reqJson;",
+                  "  try {",
+                  "    reqJson = typeof reqBody === 'string' ? JSON.parse(reqBody) : reqBody;",
+                  "  } catch (e) {",
+                  "    console.error(\"Request body parsing failed:\", e);",
+                  "    return;",
+                  "  }",
+                  "",
+                  "  if (reqJson.method === \"transfer.create\" && data.result?.ext_id) {",
+                  "    bru.setEnvVar(\"ext_id\", data.result.ext_id);",
+                  "    console.log(\"Saved ext_id:\", data.result.ext_id);",
+                  "  }",
+                  "});",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{api}}/transfers/",
+              "protocol": "",
+              "host": [
+                "{{api}}"
+              ],
+              "path": [
+                "transfers",
+                ""
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\": \"transfer.create\",\n    \"params\": {\n        \"sender_card_number\":\"9860080121420436\",\n        \"receiver_card_number\":\"9860140114330149\",\n        \"sender_card_expiry\":\"09/29\",\n        \"sending_amount\":1000,\n        \"currency\":860\n    },\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Get State",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{api}}/transfers/",
+              "protocol": "",
+              "host": [
+                "{{api}}"
+              ],
+              "path": [
+                "transfers",
+                ""
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\": \"transfer.state\",\n    \"params\": {\n        \"ext_id\":\"{{ext_id}}\"\n    },\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "History",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{api}}/transfers/",
+              "protocol": "",
+              "host": [
+                "{{api}}"
+              ],
+              "path": [
+                "transfers",
+                ""
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\": \"transfer.history\",\n    \"params\": {\n      \"card_number\": \"9860080121420436\",\n      \"start_date\": \"2025-10-01\",\n      \"end_date\": \"2025-10-05\",\n      \"status\": \"cancelled\"\n    },\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "api",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "ext_id",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

@@ -536,3 +536,19 @@ redis.exceptions.ConnectionError: Error -3 connecting to redis_service:6379. Tem
 2025-10-04 19:34:45,227 - INFO - unisoft - [END] card_info | Time=0.0083s | Response=<oslash.either.Right object at 0x7f9dbb21b3a0>
 2025-10-04 19:43:24,537 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'expire': '09/29'}
 2025-10-04 19:43:24,552 - INFO - unisoft - [END] card_info | Time=0.0146s | Response=<oslash.either.Right object at 0x7fcbd7d4b970>
+2025-10-04 19:54:43,981 - INFO - unisoft - [START] transfer_create | IP=unknown | args=() kwargs={'sender_card_number': '9860 080** **** 0436', 'receiver_card_number': '9860 140** **** 0149', 'sender_card_expiry': '09/29', 'sending_amount': 1000, 'currency': 860}
+2025-10-04 19:54:45,601 - INFO - unisoft - [END] transfer_create | Time=1.6224s | Response=<oslash.either.Right object at 0x7fcbd7dc0b50>
+2025-10-04 19:54:56,290 - INFO - unisoft - [START] transfer_confirm | IP=unknown | args=() kwargs={'ext_id': 'tr-9329e02b-93be-4ac1-918b-c8a497b79b26', 'otp': '*****6'}
+2025-10-04 19:54:56,339 - INFO - unisoft - [END] transfer_confirm | Time=0.0493s | Response=<oslash.either.Right object at 0x7fcbd7dc0d30>
+2025-10-04 19:55:00,131 - INFO - unisoft - [START] transfer_state | IP=unknown | args=() kwargs={'ext_id': 'tr-9329e02b-93be-4ac1-918b-c8a497b79b26'}
+2025-10-04 19:55:00,138 - INFO - unisoft - [END] transfer_state | Time=0.0066s | Response=<oslash.either.Right object at 0x7fcbd7dc06a0>
+2025-10-04 19:55:08,202 - INFO - unisoft - [START] transfer_history | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'start_date': '2025-10-01', 'end_date': '2025-10-05', 'status': 'cancelled'}
+2025-10-04 19:55:08,225 - INFO - unisoft - [END] transfer_history | Time=0.0223s | Response=<oslash.either.Right object at 0x7fcbd7dc0bb0>
+2025-10-04 19:55:12,029 - INFO - unisoft - [START] transfer_cancel | IP=unknown | args=() kwargs={'ext_id': 'tr-9329e02b-93be-4ac1-918b-c8a497b79b26'}
+2025-10-04 19:55:12,051 - INFO - unisoft - [END] transfer_cancel | Time=0.0221s | Response=<oslash.either.Right object at 0x7fcbd7dc0640>
+2025-10-04 19:55:15,492 - INFO - unisoft - [START] transfer_history | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'start_date': '2025-10-01', 'end_date': '2025-10-05', 'status': 'cancelled'}
+2025-10-04 19:55:15,502 - INFO - unisoft - [END] transfer_history | Time=0.0099s | Response=<oslash.either.Right object at 0x7fcbd7dc05b0>
+2025-10-04 19:55:19,542 - INFO - unisoft - [START] card_add | IP=unknown | args=() kwargs={'card_number': '5614681212949303', 'expire': '12/26', 'phone': '998901234567', 'status': 'active', 'balance': 100000}
+2025-10-04 19:55:19,593 - INFO - unisoft - [END] card_add | Time=0.051s | Response=<oslash.either.Left object at 0x7fcbd7d25bd0>
+2025-10-04 19:55:24,496 - INFO - unisoft - [START] card_info | IP=unknown | args=() kwargs={'card_number': '9860080121420436', 'expire': '09/29'}
+2025-10-04 19:55:24,501 - INFO - unisoft - [END] card_info | Time=0.0056s | Response=<oslash.either.Right object at 0x7fcbd7dc0550>
